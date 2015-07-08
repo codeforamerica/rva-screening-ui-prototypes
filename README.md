@@ -55,15 +55,8 @@ To add a new template:
 
     ```python
     # in app/views.py
-    templates = [
-                {
-                    'slug': 'text_fields',
-                    'description': 'Different ideas for simple text fields',
-                },
-                {
-                    'slug': 'mynewtemplate',
-                    'description': '3 proposals for a thing in the UI'
-                }
-            ]
-
+    templates = {
+            'text_fields': 'Different ideas for simple text fields',
+            'mynewtemplate': '3 proposals for a thing in the UI',
+            }
     ```

@@ -2,12 +2,12 @@
 {% block content %}
 
 <ul class="templates">
-  {% for template in templates %}
+  {% for slug, description in templates.items() %}
   <li class="template">
-  <a href="/{{template.slug}}" class="navlink">{{template.slug}}.html</a>
+  <a href="/{{slug}}" class="navlink">{{slug}}.html</a>
   —
   <span class="description">
-    {{template.description}}
+    {{description}}
   </span>
   </li>
   {% endfor %}
