@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if patient is not defined %}
+{% set patient = DATA.example_patient %}
+{% endif %}
+
+<div class="form_row">
+
+  <label class="form_field field_first_name">
+    <span class="field_label">
+      {{ _("First Name") }}
+    </span>
+    <input type="text" 
+      class="field_input" 
+      name="first_name" 
+      id="full_name" 
+      {% if patient.full_name %}
+        value="{{patient.full_name}}"
+      {% elif patient.first_name %}
+        value="{{patient.first_name}}"
+      {% endif %}>
+  <!--storing full legal name in first_name so that it doesn't break backend-->
+  </label>
+
+  <label class="form_field field_middle_name">
+    <span class="field_label">
+      {{ _("Middle Name") }}
+    </span>
+    <input type="text" 
+      class="field_input" 
+      name="middle_name" 
+      {% if patient.middle_name %}
+        value="{{patient.middle_name}}"
+      {% endif %}>
+  </label>
+
+  <label class="form_field field_last_name">
+    <span class="field_label">
+      {{ _("Last Name") }}
+    </span>
+    <input type="text" 
+      class="field_input" 
+      name="last_name" 
+      {% if patient.last_name %}
+        value="{{patient.last_name}}"
+      {% endif %}>
+  </label>
+
+</div>
+
+
+
+  <div class="form_row">
+
+      <label class="form_field field_dob">
+        <span class="field_label">
+        {{ _("Date of birth") }}
+        </span>
+        <input type="date" 
+          class="field_input"  
+          max="2200-01-01" 
+          min="1899-01-01" 
+          name="dob" 
+          id="dob"
+          {% if patient.dob %} 
+            value="{{patient.dob}}"
+          {% endif %}>
+      </label>
+
+      <label class="form_field field_ssn">
+        <span class="field_label">
+          {{ _("SSN") }}
+        </span>
+        <span class="field_flag">
+          {{ _("(optional)") }}
+        </span>
+        <input type="text" 
+          class="field_input" 
+          name="ssn" 
+          id="ssn" 
+          placeholder="555-55-5555" 
+          pattern="\d{3}-?\d{2}-?\d{4}"
+          {% if patient.ssn %}
+            value="{{patient.ssn}}"
+          {% endif %}>
+      </label>
+
+  </div>
+
+
+  
+{% endblock content %}

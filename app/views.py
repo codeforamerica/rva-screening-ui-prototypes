@@ -3,8 +3,8 @@ from app import app
 
 templates = [
             {
-                'slug': '',
-                'description': '',
+                'slug': 'text_fields',
+                'description': 'Different ideas for simple text fields',
             }
         ]
 
@@ -14,5 +14,5 @@ def index():
 
 @app.route("/<template_slug>", methods=["GET"])
 def template(template_slug):
-    return render_template(template_slug + ".html")
+    return render_template(template_slug + ".html", slug=template_slug)
 
