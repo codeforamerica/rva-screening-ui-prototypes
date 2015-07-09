@@ -1,0 +1,921 @@
+
+<html lang="en">
+<head>
+  <title>RVA Screener</title>
+  <meta name="viewport" content="width=device-width" charset="utf-8">
+  <link href="/css/main.css" rel="stylesheet">
+
+  <!-- temporary include of mapbox.js for testing -->
+  <!-- <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script> -->
+  <!-- <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' /> -->
+  <!-- /mapbox.js -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+  <body>
+  <nav class="navbar navbar-inverse navbar-static-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Screener</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li class=""><a href="/new_prescreening"><span class="glyphicon glyphicon-pencil push-right" aria-hidden="true"></span>Pre-Screener</a></li>
+        
+        <li class=""><a href="/"><span class="glyphicon glyphicon-eye-open push-right" aria-hidden="true"></span>View Your Patients</a></li>
+        <li class=""><a href="/search_new"><span class="glyphicon glyphicon-globe push-right" aria-hidden="true"></span>Find Patient in Network</a></li>
+        <li class=""><a href="/new_patient"><span class="glyphicon glyphicon-plus push-right" aria-hidden="true"></span>Create Patient</a></li>
+        <li><a href="/logout"><span class="glyphicon glyphicon-log-out push-right" aria-hidden="true"></span>Logout</a></li>
+        
+
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+  <div class="container">
+    
+
+  <div class="patient-profile col-md-3 clearfix">
+
+  <img class="patient-image img-responsive" src="http://wanna.work/images/default-avatar.jpg">
+  
+  <h2>John Adams</h2>
+  <p>DOB: 1989-01-05</p>
+
+  
+  <div class="fpl form-group">
+    <label class="fpl-label">
+      Estimated FPL:</label>
+    <span class="fpl-figure">
+      24.46</span><span class="fpl-percent-symbol">%
+    </span>
+  </div>
+  
+
+</div>
+
+  <div class="patient-content col-md-9">
+
+    
+
+        <div class="patient-options">
+  <a class="btn btn-primary" href="/new_prescreening/12">
+  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+  Prescreen this patient
+  </a>
+
+  <a class="btn btn-danger delete-patient right" href="/delete/12">
+  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+  Delete patient
+  </a>
+</div>
+
+<br>
+<ul class="patient-nav nav nav-tabs">
+
+  <li role="presentation" class="active">
+    <a href="/patient_details/12">
+    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>  
+    Details
+    </a>
+  </li>
+
+  <li role="presentation" >
+    <a href="/patient_print/12">
+      <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+      Print this patient
+    </a>
+  </li>
+
+  <li role="presentation" >
+    <a href="/patient_history/12">
+    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  
+    View Edit History
+    </a>
+  </li>
+
+  <li role="presentation" >
+    <a href="/patient_share/12">
+    <span class="glyphicon glyphicon-share-alt"></span>
+    Share Patient
+    </a>
+  </li>
+</ul>
+
+    
+
+    <form enctype="multipart/form-data" action="" method="post" id="patient_details_form" class="form print">
+
+      <!-- id info -->
+      <div class="form_section">
+          <div class="form_row">
+
+  <label class="form_field field_first_name">
+    <span class="field_label">
+      First Name
+    </span>
+    <input type="text" 
+      class="field_input" 
+      name="first_name" 
+      id="full_name" 
+      
+        value="John Adams"
+      >
+  <!--storing full legal name in first_name so that it doesn't break backend-->
+  </label>
+
+  <label class="form_field field_middle_name">
+    <span class="field_label">
+      Middle Name
+    </span>
+    <input type="text" 
+      class="field_input" 
+      name="middle_name" 
+      >
+  </label>
+
+  <label class="form_field field_last_name">
+    <span class="field_label">
+      Last Name
+    </span>
+    <input type="text" 
+      class="field_input" 
+      name="last_name" 
+      >
+  </label>
+
+</div>
+
+  <div class="form_row">
+
+      <label class="form_field field_dob">
+        <span class="field_label">
+        Date of birth
+        </span>
+        <input type="date" 
+          class="field_input"  
+          max="2200-01-01" 
+          min="1899-01-01" 
+          name="dob" 
+          id="dob"
+           
+            value="1989-01-05"
+          >
+      </label>
+
+      <label class="form_field field_ssn">
+        <span class="field_label">
+          SSN
+        </span>
+        <span class="field_flag">
+          (optional)
+        </span>
+        <input type="text" 
+          class="field_input" 
+          name="ssn" 
+          id="ssn" 
+          placeholder="555-55-5555" 
+          pattern="\d{3}-?\d{2}-?\d{4}"
+          
+            value="999-99-9999"
+          >
+      </label>
+
+  </div>
+
+
+
+
+      </div>
+
+      <!--contact info-->
+      <div class="form_section">
+        <h2>Phone, Email, Address</h2>
+          <h5>
+  Phone Numbers
+</h5>
+
+<table class="table table-condensed phone_numbers" id="phone_number_table">
+
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+
+  
+    
+  
+
+  <tr class="phone_number" id="phone_number_input">
+    <td class="phone_number_number">
+      <input type="hidden" name="phone_primary_yn" >
+      <input class="form-control" type="tel" name="phone_number">
+    </td>
+    <td class="phone_number_name">
+      <input class="form-control" type="text" name="phone_description"/>
+    </td>
+  </tr>
+
+</table>
+
+<div class="form-group add_phone_number">
+    <button
+      type="button"
+      class="button button_multifield_addrow"
+      onclick="addNewInputRow($('#phone_number_table'), $('#phone_number_input'))"
+    >
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      Add a phone number
+    </button>
+</div>
+
+  <div class="form-row">
+
+    <div class="form-group email">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" name="email" id="email">
+    </div>
+
+    <!--<div class="form-group email_name">-->
+      <!--<label for="email_name">Name</label>-->
+      <!--<input type="text" class="form-control" name="email_name" id="email_name">-->
+    <!--</div>-->
+
+</div>
+
+  <h5>
+  Addresses
+</h5>
+
+<table class="table table-condensed addresses" id="address_table">
+
+  <thead>
+    <tr>
+      <th>Address</th>
+      <th>Description</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  
+
+    
+
+  
+
+  <tr class="address" id="address_input">
+    <td class="address_address">
+      Address: <input class="form-control" type="text" name="address1">
+      <input class="form-control" type="text" name="address2">
+      City: <input class="form-control" type="text" name="city">
+      State: <input class="form-control" type="text" name="state">
+      ZIP: <input class="form-control" type="text" name="zip">
+    </td>
+    <td class="address_type">
+      <input class="form-control" type="text" name="address_description">
+    </td>
+  </tr>
+
+</table>
+
+
+<div class="form-group add_address">
+  <button
+    type="button"
+    class="btn btn-primary"
+    onclick="addNewInputRow($('#address_table'), $('#address_input'))"
+  >
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    Add an address
+  </button>
+</div>
+
+
+      </div>
+
+      <!--contact info-->
+      <div class="expander">
+        <div class="expander-title">Emergency Contacts</div>
+          <div class="expander-content">
+            <div class="table-wrapper">
+  <table class="table table-condensed emergency_contacts" id="emergency_contact_table">
+
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone Number </th>
+        <th>Relationship </th>
+        <th>Edit </th>
+        <th>Delete </th>
+      </tr>
+    </thead>
+
+    
+      
+    
+
+    <tr class="emergency_contact" id="emergency_contact_input">
+      <td>
+        <input type="text" class="form-control" name="emergency_contact_name"/>
+      </td>
+      <td>
+        <input type="tel" class="form-control" name="emergency_contact_phone_number"/>
+      </td>
+      <td>
+        <input class="form-control" type="text" name="emergency_contact_relationship"/>
+      </td>
+      <td></td>
+    </tr>
+
+  </table>
+</div>
+
+<div class="form-group add_emergency_contact">
+  <button
+    type="button"
+    class="btn btn-primary"
+    onclick="addNewInputRow($('#emergency_contact_table'), $('#emergency_contact_input'))"
+  >
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    Add an emergency contact
+  </button>
+</div>
+          </div>
+      </div>
+
+      <!--household-->
+      <div class="expander">
+        <div class="expander-title">Household Size: 
+        1
+      
+          </div>
+          <div class="expander-content"><div class="table-wrapper">
+  <table class="table table-condensed hh_members" id="household_member_table">
+
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>DOB</th>
+        <th>SSN</th>
+        <th>Relationship</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    <tr class="hh_member patient">
+      <td class="hh_member_number">1</td>
+      <td class="hh_member_full_name">John Adams</td>
+      <td class="hh_member_dob">1989-01-05</td>
+      <td class="hh_member_ssn">999-99-9999</td>
+      <td class="hh_member_relation">Self</td>
+      <td class="hh_member_edit">
+      </td>
+    </tr>
+
+    
+      
+    
+
+    <tr class="hh_member" id="household_member_input">
+      <td class="hh_member_number"></td>
+      <td class="hh_member_full_name">
+        <input class="form-control" type="text" name="household_member_full_name"/>
+      </td>
+      <td class="hh_member_age">
+        <input class="form-control" type="date" name="household_member_dob"/>
+      </td>
+      <td class="hh_member_ssn">
+        <input class="form-control" type="text" name="household_member_ssn"/>
+      </td>
+      <td class="hh_member_relation">
+        <input class="form-control" type="text" name="household_member_relation"/>
+      </td>
+      <td class="hh_member_edit"></td>
+    </tr>
+
+  </table>
+</div>
+
+<div class="form-group add_hh_member">
+  <button
+    type="button"
+    class="btn btn-primary"
+    onclick="addNewInputRow($('#household_member_table'), $('#household_member_input'))"
+  >
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    Add a person
+  </button>
+</div></div>
+      </div>
+
+      <!--income-->
+      <div class="expander">
+        <div class="expander-title">Household Income:
+          $300/month
+    
+          </div>
+          <div class="expander-content">
+<table class="table table-condensed income_sources" id="income_source_table">
+
+  <thead>
+    <tr>
+      <th>Source</th>
+      <th>$/mo.</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+
+  
+    
+      <tr class="income_source">
+        <td class="income_source_type">
+          <input class="hidden" value="96" name="income_source_id">
+          <div class="read-only">Job</div>
+          <input class="form-control hidden-input" type="text" name="income_source_source" value="Job"/>
+        </td>
+        <td class="income_source_amount">
+          <div class="read-only">$300</div>
+          <input class="form-control hidden-input" type="text" name="income_source_amount" value="300"/>
+        </td>
+        <td class="income_source_edit">
+          <span
+            class="glyphicon glyphicon-pencil"
+            aria-hidden="true"
+            onclick="showHiddenFields()"
+          ></span>
+        </td>
+        <td class="income_source_delete">
+          <span
+            class="glyphicon glyphicon-remove"
+            aria-hidden="true"
+            onclick="hideRow()"
+          ></span>
+        </td>
+      </tr>
+    
+  
+
+  <tr class="income_source" id="income_source_input">
+    <td class="income_source_type">
+      <input class="form-control" type="text" name="income_source_source"/>
+    </td>
+    <td class="income_source_amount">
+      <input class="form-control" type="text" name="income_source_amount"/>
+    </td>
+    <td class="income_source_edit"></td>
+  </tr>
+
+</table>
+
+<div class="form-group add_income_source">
+    <button
+      type="button"
+      class="btn btn-primary"
+      onclick="addNewInputRow($('#income_source_table'), $('#income_source_input'))"
+    >
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      Add a source of income
+    </button>
+</div></div>
+      </div>
+
+      <!--documents-->
+      <div class="expander">
+        <div class="expander-title">Document Uploads
+           (0) </div>
+          <div class="expander-content"><div class="table-wrapper">
+  <table class="table table-condensed patient_docs" id="document_image_table">
+
+    <thead>
+      <tr>
+        <th>Preview</th>
+        <th>Description</th>
+        <th>Uploaded</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+
+    
+
+    
+
+    
+
+    <tr id="document_image_input">
+      <td>
+        <input type="file" name="document_image_file">
+      </td>
+      <td>
+        <input type="text" id ="document_image_description" name="document_image_description">
+      </td>
+    </tr>
+
+  </table>
+
+</div>
+
+
+
+<div class="form-group add_patient_doc">
+  <button
+    type="button"
+    class="btn btn-primary"
+    onclick="addNewInputRow($('#document_image_table'), $('#document_image_input'))"
+  >
+    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+    Add a document
+  </button>
+</div></div>
+      </div>
+
+      <!--demographics-->
+      <div class="expander">
+        <div class="expander-title">Demographic Questions</div>
+          <div class="expander-content">  <div class="patient_gender_trans_group">
+
+  <div class="form-group gender">
+    <label for="gender">Gender</label>
+    <select class="form-control" name="gender">
+      
+      
+      
+      
+      <option class='default-choice' value="" selected>No Answer</option>
+<option value="F">Female</option>
+<option value="M">Male</option>
+
+      
+    </select>
+  </div>
+
+  <div class="form-group transgender">
+    <label for="transgender">Transgender</label>
+    <select class="form-control" name="transgender">
+      
+      
+      
+      
+      <option class='default-choice' value="" selected></option>
+<option value="No">Not transgender</option>
+<option value="FTM">Female to Male</option>
+<option value="MTF">Male to Female</option>
+
+      
+    </select>
+  </div>
+</div>
+
+  <div class="patient_race_ethnicity_group">
+
+  <div class="form-group race">
+    <label for="race">Race</label>
+    <select class="form-control has_other" name="race">
+      
+      
+      
+      
+      <option class='default-choice' value="" selected></option>
+<option value="AIAN">American Indian/Alaskan Native</option>
+<option value="A">Asian</option>
+<option value="AA">Black or African-American</option>
+<option value="NHPI">Native Hawaiian/Pacific Islander</option>
+<option value="W">White</option>
+<option value="other">Other</option>
+
+      
+    </select>
+  </div>
+
+  <div class="form-group  hidden">
+    <label for="race_other">Please specify other race</label>
+    <input type="text" class="form-control" name="race_other" id="race_other">
+  </div>
+
+  <div class="form-group ethnicity">
+    <label for="ethnicity">Ethnicity</label>
+    <select class="form-control" name="ethnicity">
+      
+      
+      
+      
+      <option class='default-choice' value="" selected></option>
+<option value="HL">Hispanic or Latino</option>
+<option value="NHL">Not Hispanic or Latino</option>
+
+      
+    </select>
+  </div>
+
+</div>
+
+    <div class="form-group language">
+    <label for="language">Language</label>
+    <select class="form-control has_other" name="languages">
+      
+      
+      
+      
+      <option class='default-choice' value="" selected></option>
+<option value="EN">English</option>
+<option value="ES">Spanish</option>
+<option value="AR">Arabic</option>
+<option value="other">Other</option>
+
+      
+    </select>
+  </div>
+
+  <div class="form-group  hidden">
+    <label for="language_other">Please specify other language</label>
+    <input type="text" class="form-control" name="language_other" id="language_other">
+  </div>
+    <div class="form-group marital_status">
+    <label for="marital_status">Marital status</label>
+    <select class="form-control" name="marital_status">
+      
+      
+      
+      
+      <option class='default-choice' value="" selected></option>
+<option value="SIM">Single</option>
+<option value="MAR">Married</option>
+<option value="DIV">Divorced</option>
+<option value="WID">Widowed</option>
+<option value="SEP">Legally Separated</option>
+<option value="PAR">Partner</option>
+
+      
+    </select>
+  </div>
+    <div class="form-group">
+    <label for="is_veteran">Are you a <strong>veteran</strong> of the United States?</label>
+    <select class="form-control" name="veteran_yn">
+      
+            <option value="" selected></option>
+      <option value="Y">Yes</option>
+      <option value="N">No</option>
+      
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="housing_status">Living situation</label>
+    <select class="form-control has_other" name="housing_status">
+      
+      
+      
+      
+      <option class='default-choice' value="" selected></option>
+<option value="REN">Renting</option>
+<option value="OWN">Owns home (self or family)</option>
+<option value="SOM">Lives with someone</option>
+<option value="TEM">Lives temporarily with family or friends</option>
+<option value="TRA">Is in Transitional housing for the homeless</option>
+<option value="EMR">Emergency Shelter</option>
+<option value="STR">On the street (car, encampment, abandoned building)</option>
+<option value="other">Other</option>
+
+      
+    </select>
+  </div>
+
+  <div class="form-group  hidden">
+    <label for="housing_status_other">Please specify other living situation</label>
+    <input type="text" class="form-control" name="housing_status_other" id="housing_status_other">
+  </div>
+
+
+
+
+
+</div>
+      </div>
+
+      <!--employment-->
+      <div class="expander">
+        <div class="expander-title">Employment Information</div>
+          <div class="expander-content"><div class="form-group employment_status">
+  <label for="employment_status">Employment Status</label>
+  <select class="form-control" name="employment_status">
+      
+      
+      
+      
+      <option class='default-choice' value="" selected></option>
+<option value="FT">Full-time</option>
+<option value="PT">Part-time</option>
+<option value="SEA">Seasonal</option>
+<option value="DIS">Disabled</option>
+<option value="RET">Retired</option>
+<option value="DEP">Dependent</option>
+<option value="UNE">Unemployed</option>
+
+      
+  </select>
+</div>
+
+  <div class="form-group student_status">
+    <label for="student_status">Student Status</label>
+    <select class="form-control" name="student_status">
+      <option value="" selected></option>
+      <option value="Not a student">Not a student</option>
+      <option value="Full-time">Full-time</option>
+      <option value="Part-time">Part-time</option>
+    </select>
+  </div>
+
+<div class="form-group spouse_employment_status">
+  <label for="spouse_employment_status">Spouse's employment status</label>
+  <select class="form-control" name="spouse_employment_status">
+      
+      
+      
+      
+      <option class='default-choice' value="" selected></option>
+<option value="FT">Full-time</option>
+<option value="PT">Part-time</option>
+<option value="SEA">Seasonal</option>
+<option value="DIS">Disabled</option>
+<option value="RET">Retired</option>
+<option value="DEP">Dependent</option>
+<option value="UNE">Unemployed</option>
+
+      
+  </select>
+</div>
+
+
+<div class="employers">
+  <h4>Employers</h4>
+  <div class="table-wrapper">
+    <table class="table table-condensed employment" id="employer_table">
+      <thead>
+        <tr>
+          <th>Employer Name</th>
+          <th>Phone Number</th>
+          <th>Whose job?</th>
+          <th>Edit</th>
+        </tr>
+      </thead>
+      
+        
+      
+      <tr class="employer" id="employer_input">
+        <td>
+          <input class="form-control" type="text" name="employer_name"/>
+        </td>
+        <td>
+          <input class="form-control" type="tel" name="employer_phone_number"/>
+        </td>
+        <td>
+          <select class="form-control" name="employer_employee">
+            <option value="Patient">Patient</option>
+            <option value="Spouse">Spouse</option>
+          </select>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="many_to_one_form hidden">
+    <!-- <div class="form-row"> -->
+<tr>
+  <td>
+    
+    <div class="read-only"></div>
+    <div class="hidden-input">
+      <input type="text" class="hidden-input form-control" name="employer_name" id="employer_name">
+    </div>
+  </td>
+  <td>
+    <div class="read-only"></div>
+    <div class="hidden-input">
+      <input type="tel" class="hidden-input form-control" name="employer_phone_number" id="employer_phone_number">
+    </div>
+  </td>
+  <td>
+    <div class="read-only"></div>
+    <div class="hidden-input">
+      <select class="hidden-input form-control" name="employer_employee">
+        <option class="hidden-input" value="Patient" selected>Patient</option>
+        <option class="hidden-input" value="Spouse">Spouse</option>
+      </select>
+    </div>
+  </td>
+  <td class="edit">
+    <span 
+      class="glyphicon glyphicon-pencil"
+      aria-hidden="true"
+      onclick="showHiddenFields()"></span>
+  </td>
+  <td class="income_source_delete">
+    <span
+      class="glyphicon glyphicon-remove"
+      aria-hidden="true"
+      onclick="hideRow()"></span>
+  </td>
+</tr>
+  </div>
+
+  <div class="form-group add_employer">
+    <button
+      type="button"
+      class="btn btn-primary"
+      onclick="addNewInputRow($('#employer_table'), $('#employer_input'))">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+      Add an employer
+    </button>
+ </div>
+</div>
+
+</div>
+      </div>
+
+      <!--insurance-->
+      <div class="expander">
+        <div class="expander-title">Insurance Information</div>
+          <div class="expander-content"><!--When and where did you last receive healthcare services?  text-->
+  <div class="form-group last_healthcare">
+    <label for="last_healthcare_service">When and where did you last receive healthcare services?</label>
+    <input type="text" class="form-control" name="last_healthcare" id="last_healthcare_service" value="None">
+  </div>
+
+  <div class="form-group insurance_status">
+    <label for="has_insurance_or_card">Do you have insurance or a card to help you cover medical costs?</label>
+    <select class="form-control" name="insurance_status">
+      
+            <option value="" selected></option>
+      <option value="Y">Yes</option>
+      <option value="N">No</option>
+      
+    </select>
+  </div>
+
+  <div class="form-group coverage_type">
+    <label for="coverage_type">Coverage Type</label>
+    <select class="form-control" name="coverage_type">
+      
+      
+      
+      
+      <option class='default-choice' value="" selected></option>
+<option value="PRIV">Private Insurance</option>
+<option value="MCAID">Medicaid</option>
+<option value="MCARE">Medicare</option>
+<option value="VA">VA Healthcare</option>
+<option value="VCC">VCC</option>
+<option value="VCUI">VCU Indigent Care</option>
+<option value="BSCC">Bon Secours CareCard</option>
+<option value="OTHER">Other</option>
+
+      
+    </select>
+  </div>
+
+  <div class="form-group  hidden">
+    <label for="coverage_type_other">Please specify other coverage type</label>
+    <input type="text" class="form-control" name="coverage_type_other" id="coverage_type_other">
+  </div>
+
+
+
+</div>
+      </div>
+
+      <button type="submit" class="button button_form_save">
+         Save patient info
+      </button>
+
+    </form>
+
+  </div>
+
+
+  </div>
+    <script type="text/javascript" src="/js/vendor.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script>
+    window.onload = init();
+    function init() {
+      window.App = new AppController({
+        foo: 'bar'
+      });
+    }
+    </script>
+  </body>
+</html>

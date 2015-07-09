@@ -1,10 +1,11 @@
 // a label for a field or a multifield
 .field_label {
+  color: $field-label-color;
 }
-
 
 // flags are short pieces of text that explain something about the field
 .field_flag {
+  color: $field_flag_color;
 }
 
 // help text for a field or multifield
@@ -13,6 +14,8 @@
 
 // an individual input element in a field
 .field_input {
+  padding: $bump-small;
+  font-size: 1.2em;
   display: block;
 }
 

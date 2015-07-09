@@ -3,10 +3,14 @@
 
 
 .form_section {
+  border: 1px solid $color-black;
 }
 
 // a wrapping element for multiple fields that lie on one row
 .form_row {
+  .form_field {
+    display:inline-block;
+  }
 }
 
 // a single input with associated label and help text

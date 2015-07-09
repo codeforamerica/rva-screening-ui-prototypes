@@ -1,0 +1,36 @@
+@mixin button($bg-color: $color-lightgray, $text-color: $color-black, $radius: 0px, $padding: .5em 1em) {
+  padding: $padding;
+  border-radius: $radius;
+  background-color: $bg-color;
+  color: $text-color;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  font-size:.8em;
+  &:hover {
+    background-color: darken($bg-color, 10);
+  }
+}
+
+// general button class
+.button {
+  @include button();
+
+  &.large {
+    font-size: 1em;
+  }
+}
+
+// buttons in multifield (many-to-one) envrionments
+.button_multifield_addrow {
+  @include button();
+  &:before {
+    content:"\f067";
+    font-family: "FontAwesome";
+    margin-right: .5em;
+  }
+}
+
+.button_form_save {
+  @include button($color-green, $color-white);
+}

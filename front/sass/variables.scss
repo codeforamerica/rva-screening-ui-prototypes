@@ -1,0 +1,46 @@
+/* * * * * * * * 
+**
+** RANDOM
+** These should eventually be sorted, unless we are using them
+** as helpers across the .scss files. If so, please move to the
+** HELPERS section.
+**
+** * * * * * * */
+
+$bump-small: 5px;
+
+/* * * * * * * * 
+**
+** COLORS
+**
+** * * * * * * */
+
+$color-black: #111;
+$color-white: #fff;
+$color-darkgray: #999;
+$color-lightgray: #f6f6f6;
+
+$color-green: #b5bd36;
+
+/* * * * * * * * 
+**
+** BASE
+**
+** * * * * * * */
+
+$text-color: $color-black;
+$background-color: $color-lightgray;
+
+/* * * * * * * * 
+**
+** FORMS
+**
+** * * * * * * */
+
+// form_row
+
+// field_label
+$field_label_color: $color-black;
+
+// flags
+$field_flag_color: $color-darkgray;
