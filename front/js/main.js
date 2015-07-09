@@ -123,6 +123,9 @@ function addNewInputRow($table, $input_row) {
   $new_row.each(function() {
     $(this).find(':input').val('');
   });
+  $new_row.each(function() {
+    $(this).find('span').remove();
+  })
   $table.append($new_row);
   return;
 }

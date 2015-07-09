@@ -199,12 +199,36 @@
       <!--contact info-->
       <div class="form_section">
         <h2>Phone, Email, Address</h2>
-          <h5>
-  Phone Numbers
-</h5>
+
+      <div class="form_multifield_wrapper">
+        <div class="form_multifield" id="multifield_phone_number">
+          <div class="form_row" id="multiefield_phone_number_row">
+            <label class="form_field">
+              <span class="field_label">Phone Number</span>
+              <input class="field_input" type="tel" name="phone_number">
+            </label>
+            <label class="form_field">
+              <span class="field_label">Description</span>
+              <input class="field_input" type="text" name="phone_description">
+            </label>
+          </div>  
+        </div>
+
+        <button type="button"
+          class="button button_multifield_addrow"
+          onclick="addNewInputRow($('#multifield_phone_number'), $('#multiefield_phone_number_row'))">
+          Add a phone number
+        </button>
+      </div>
+
+<div class="form-group add_phone_number">
+    
+</div>
+
+
+<hr>
 
 <table class="table table-condensed phone_numbers" id="phone_number_table">
-
   <thead>
     <tr>
       <th>Number</th>
@@ -212,20 +236,16 @@
     </tr>
   </thead>
 
-  
-    
-  
-
   <tr class="phone_number" id="phone_number_input">
     <td class="phone_number_number">
       <input type="hidden" name="phone_primary_yn" >
       <input class="form-control" type="tel" name="phone_number">
     </td>
+    
     <td class="phone_number_name">
       <input class="form-control" type="text" name="phone_description"/>
     </td>
   </tr>
-
 </table>
 
 <div class="form-group add_phone_number">
@@ -548,20 +568,54 @@
         <div class="expander-title">Demographic Questions</div>
           <div class="expander-content">  <div class="patient_gender_trans_group">
 
-  <div class="form-group gender">
-    <label for="gender">Gender</label>
-    <select class="form-control" name="gender">
-      
-      
-      
-      
-      <option class='default-choice' value="" selected>No Answer</option>
-<option value="F">Female</option>
-<option value="M">Male</option>
+  <div class="form_row">
 
-      
-    </select>
+      <label class="form_field field_dob">
+        <span class="field_label">
+        Date of birth
+        </span>
+        <input type="date" 
+          class="field_input"  
+          max="2200-01-01" 
+          min="1899-01-01" 
+          name="dob" 
+          id="dob"
+           
+            value="1989-01-05"
+          >
+      </label>
+
+      <label class="form_field field_ssn">
+        <span class="field_label">
+          SSN
+        </span>
+        <span class="field_flag">
+          (optional)
+        </span>
+        <input type="text" 
+          class="field_input" 
+          name="ssn" 
+          id="ssn" 
+          placeholder="555-55-5555" 
+          pattern="\d{3}-?\d{2}-?\d{4}"
+          
+            value="999-99-9999"
+          >
+      </label>
+
   </div>
+
+
+    <label class="form_field field_gender">
+      <span class="field_label">
+        Gender
+      </span>
+      <select class="field_select" name="gender">
+        <option class='default-choice' value="" selected>No Answer</option>
+        <option value="F">Female</option>
+        <option value="M">Male</option>
+      </select>
+    </label>
 
   <div class="form-group transgender">
     <label for="transgender">Transgender</label>

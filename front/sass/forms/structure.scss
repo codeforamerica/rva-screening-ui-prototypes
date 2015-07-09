@@ -3,11 +3,14 @@
 
 
 .form_section {
-  border: 1px solid $color-black;
+  border: 1px solid $color-lightgray;
+  margin-bottom: 5em;
+  padding: 1em;
 }
 
 // a wrapping element for multiple fields that lie on one row
 .form_row {
+  margin-bottom: .5em;
   .form_field {
     display:inline-block;
   }

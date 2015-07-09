@@ -14,9 +14,22 @@
 
 // an individual input element in a field
 .field_input {
-  padding: $bump-small;
-  font-size: 1.2em;
+}
+
+// an individual select element in a field
+.field_select {
+  height: 2.5em; // this is a hack right now, but padding doesn't work in browsers yet :(
+  &:before {}
+}
+
+.field_input,
+.field_select {
+  background: $color-white;
   display: block;
+  padding: $bump-small;
+  border: 1px solid $field_border_color;
+  line-height:1em;
+  font-family: sans-serif;
 }
 
 
@@ -25,3 +38,4 @@
 .field_last_name {}
 .field_dob {}
 .field_ssn {}
+.field_gender {}
