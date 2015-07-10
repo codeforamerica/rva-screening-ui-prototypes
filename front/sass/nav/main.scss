@@ -1,0 +1,31 @@
+/*
+** MAIN NAVIGATION
+** This is a header navigation on desktop and a 
+** swipe-enabled sidebar on mobile.
+*/
+
+// variables to use; TODO move into variables.scss
+$color-darkgray: #333;
+
+
+nav {} // DO NOT STYLE
+
+// the nav wrapper, element, and all around chill dude
+.nav {
+  backgroud-color: $color-darkgray;
+}
+
+// logo space located within the .nav element
+.nav_logo {}
+
+// main menu space located within the .nav
+.nav_menu {}
+
+// unordered list located within the .nav_menu
+.nav_menu_list {}
+
+// list item located within the .nav_menu_list
+.menu_list_item {}
+
+// user-related navigation items located within the .nav
+.nav_user {}
