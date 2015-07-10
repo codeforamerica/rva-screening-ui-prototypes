@@ -4,19 +4,52 @@
 ** swipe-enabled sidebar on mobile.
 */
 
-// variables to use; TODO move into variables.scss
+// variables & mixins to use; TODO move into variables.scss
 $color-darkgray: #333;
+$color-white: #fff;
+$color-fuscia: #c71e56;
+
+@mixin transition($time: .2s) {
+  -webkit-transition: $time;
+     -moz-transition: $time;
+      -ms-transition: $time;
+       -o-transition: $time;
+          transition: $time;
+}
+
+$menu-sidebar-width: 60%;
 
 
-nav {} // DO NOT STYLE
+nav {} // DO NOT STYLE :)
+body.menu_open {
+  overflow:hidden;
+  .nav {
+    left: 0;
+  }
+}
 
 // the nav wrapper, element, and all around chill dude
 .nav {
-  backgroud-color: $color-darkgray;
+  // sidebar positioning
+  position:fixed;
+  left: -$menu-sidebar-width;
+  width: $menu-sidebar-width;
+  top: 0;
+  bottom: 0;
+
+  // styling
+  @include transition();
+  background-color: $color-fuscia;
+}
+
+.button_nav {
+  float:right;
 }
 
 // logo space located within the .nav element
-.nav_logo {}
+.nav_logo {
+  font-size: 2em; // temporary
+}
 
 // main menu space located within the .nav
 .nav_menu {}
@@ -25,7 +58,11 @@ nav {} // DO NOT STYLE
 .nav_menu_list {}
 
 // list item located within the .nav_menu_list
-.menu_list_item {}
+.menu_list_item {
+  a {
+    color: $color-white;
+  }
+}
 
 // user-related navigation items located within the .nav
 .nav_user {}
