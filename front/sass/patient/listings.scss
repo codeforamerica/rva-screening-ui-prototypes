@@ -1,0 +1,99 @@
+/*
+** LISTS / PATIENT LISTS / SEARCH RESULTS
+** Any time we show search results they use these
+** styles. Currently only used for showing patients
+** that exist in the database.
+*/
+
+@mixin list_reset() {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin bbox($option: border-box) {
+  -webkit-box-sizing: $option;
+     -moz-box-sizing: $option; 
+          box-sizing: $option;  
+}
+
+@mixin clearfix() {
+  *zoom: 1;
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+$break: 50em;
+$color-fuscia: #c71e56;
+$color-lightgray: #c0c0c0;
+
+.container {
+  max-width: 50em;
+  margin: auto;
+}
+
+.list {
+  @include list_reset();
+}
+
+.list_table {}
+.list_patient {
+  @include bbox();
+  display: block;
+  width: 100%;
+  &:nth-child(2n-1) {
+    background-color: #f6f6f6;
+  }
+  a {
+    display:block;
+    padding: 10px;
+  }
+  .list_patient_item {
+    // text-size: 0px;
+    display:block;
+    @media (min-width: $break) {
+      display: inline-block;
+      vertical-align: top;
+    }
+  }
+
+  &:hover {
+    background-color: $color-fuscia;
+    .list_patient_item {
+      color: $color-white;
+    }
+  }
+}
+
+.list_patient_name {
+  font-weight: 700;
+  color: $color-fuscia;
+
+  @media (min-width: $break) {
+    width: 35%;
+  }
+}
+
+.list_patient_dob {
+  font-weight: 100;
+  color: $color-lightgray;
+  font-family: monospace;
+  @media (min-width: $break) {
+    width: 20%;
+  }
+}
+
+.list_patient_edits {
+  color: $color-black;
+  font-size: .9em;
+  @media (min-width: $break) {
+    text-align: right;
+    width: 43%;
+  }
+}
+
