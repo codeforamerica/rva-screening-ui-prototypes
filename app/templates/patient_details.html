@@ -198,35 +198,29 @@
 
       <!--contact info-->
       <div class="form_section">
-        <h2>Phone, Email, Address</h2>
+      <h2>Phone, Email, Address</h2>
 
-      <div class="form_multifield_wrapper">
-        <div class="form_multifield" id="multifield_phone_number">
-          <div class="form_row" id="multiefield_phone_number_row">
-            <label class="form_field field_phone_number">
-              <span class="field_label">Phone Number</span>
-              <input class="field_input" type="tel" name="phone_number">
-            </label>
-            <label class="form_field field_phone_number_description">
-              <span class="field_label">Description</span>
-              <input class="field_input" type="text" name="phone_description">
-            </label>
-          </div>  
+      <div class="form_multiform_collection" id="multieform_phone_number">
+        <div class="form_multiform" id="multieform_phone_number_row">
+          <label class="form_field field_phone_number">
+            <span class="field_label">Phone Number</span>
+            <input class="field_input" type="tel" name="phone_number">
+          </label>
+          <label class="form_field field_phone_number_description">
+            <span class="field_label">Description</span>
+            <input class="field_input" type="text" name="phone_description">
+          </label>
         </div>
-
-        <button type="button"
-          class="button button_multifield_addrow"
-          onclick="addNewInputRow($('#multifield_phone_number'), $('#multiefield_phone_number_row'))">
-          Add a phone number
-        </button>
       </div>
 
-<div class="form-group add_phone_number">
-    
-</div>
+      <button type="button"
+        class="button button_multiform_addrow"
+        onclick="addNewInputRow($('#multieform_phone_number'), $('#multieform_phone_number_row'))">
+        Add a phone number
+      </button>
 
 
-<hr>
+<!-- <hr>
 
 <table class="table table-condensed phone_numbers" id="phone_number_table">
   <thead>
@@ -257,7 +251,7 @@
       <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
       Add a phone number
     </button>
-</div>
+</div> -->
 
   <div class="form-row">
 
@@ -273,9 +267,32 @@
 
 </div>
 
-  <h5>
+  <h3>
   Addresses
-</h5>
+</h3>
+
+  <div class="form_row">
+    <div class="form_multifield">
+      <label class="form_field field_address1">
+        <span class="field_label">
+        Address
+        </span>
+        <input class="form-control"
+          type="text"
+          name="address1">
+      </label>
+
+      <label class="form_field field_address2">
+        <input class="form-control"
+          type="text"
+          name="address2">
+      </label>
+
+    </div>
+  </div>
+
+
+
 
 <table class="table table-condensed addresses" id="address_table">
 

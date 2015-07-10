@@ -121,6 +121,7 @@ AppController.prototype.initSearch = function ( id, options ) {
 function addNewInputRow($table, $input_row) {
   $new_row = $input_row.clone();
   $new_row.each(function() {
+    $(this).attr('id', '');
     var input = $(this).find(':input');
     input.val('');
     input.each(function() { // adds placeholder of the field label (for mobile label)

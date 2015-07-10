@@ -22,7 +22,7 @@
 }
 
 // buttons in multifield (many-to-one) envrionments
-.button_multifield_addrow {
+.button_multiform_addrow {
   @include button();
   &:before {
     content:"\f067";

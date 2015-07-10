@@ -22,10 +22,6 @@
 
 // two or more inputs that share a label & help text
 .form_multifield {
-  .form_row {
-    border-left: 2px solid blue; // placeholder for denoting a row in many-to-ones
-    padding-left: 10px; // placeholder
-  }
 }
 
 // a wrapper for a set of many to one forms
@@ -35,4 +31,10 @@
 // a form that may be repeated based on the number of items
 // also called many-to-one form
 .form_multiform {
+  .form_field {
+    margin-top: -1px;
+  }
+  border-left: 2px solid blue; // placeholder for denoting a row in many-to-ones
+  padding-left: 10px; // placeholder
+  margin-bottom: .5em;
 }
