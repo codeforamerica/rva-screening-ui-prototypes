@@ -1,4 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
+<ul class="templates">
+  {% for slug, description in templates.items() %}
+  <li class="template">
+  <a href="/{{slug}}" class="navlink">{{slug}}.html</a>
+  —
+  <span class="description">
+    {{description}}
+  </span>
+  </li>
+  {% endfor %}
+</ul>
+
 {% endblock %}    

@@ -1,4 +1,6 @@
 install:
+	if [ ! -e ".env" ]; then
+	       touch .env
 	npm install
 	pip install -r ./requirements.txt
 

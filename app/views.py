@@ -1,12 +1,9 @@
 from flask import render_template
 from app import app
 
-templates = [
-            {
-                'slug': '',
-                'description': '',
-            }
-        ]
+templates = {
+        'text_fields': 'Different ideas for simple text fields',
+        }
 
 @app.route("/", methods=["GET"])
 def index():
@@ -14,5 +11,5 @@ def index():
 
 @app.route("/<template_slug>", methods=["GET"])
 def template(template_slug):
-    return render_template(template_slug + ".html")
+    return render_template(template_slug + ".html", slug=template_slug)
 

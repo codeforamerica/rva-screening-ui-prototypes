@@ -3,3 +3,4 @@ node_modules
 *.sw[op]
 app/static
 .DS_Store
+__pycache__
