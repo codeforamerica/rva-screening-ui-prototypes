@@ -34,3 +34,8 @@
 .button_form_save {
   @include button($color-green, $color-white);
 }
+
+.button_login {
+  background-color: $button-login-background-color;
+  color: $button-login-color;
+}

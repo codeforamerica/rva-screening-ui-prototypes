@@ -1,0 +1,73 @@
+
+<html lang="en">
+<head>
+  <title>RVA Screener</title>
+  <meta name="viewport" content="width=device-width" charset="utf-8">
+  <link href="/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- temporary include of mapbox.js for testing -->
+  <!-- <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script> -->
+  <!-- <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' /> -->
+  <!-- /mapbox.js -->
+</head>
+  <body>
+  
+  <nav class="nav cf" id="nav">
+    <div class="nav_logo">SCREENER</div>
+    <div class="nav_menu">
+      <ul class="nav_menu_list">
+        <li class="menu_list_item"><a href="#">Prescreen</a></li>
+        <li class="menu_list_item"><a href="#">View Your Patients</a></li>
+        <li class="menu_list_item"><a href="#">Find Patient In Your Network</a></li>
+        <li class="menu_list_item"><a href="#">Create Patient</a></li>
+      </ul>
+    </div>
+    <div class="nav_user">
+      <a href="#" class="nav_user_profile">sam</a> / <a href="#">logout</a>
+    </div>
+  </nav>
+
+
+  <div class="outer">
+    <div class="inner">
+      <div class="login">
+        <form method="post">
+
+          <div class="form_section form_login">
+            <label class="form_field field_login_email">
+              <span class="field_label">
+                Email Address
+              </span>
+              <input type="email"
+                name="email"
+                placeholder="you@example.com"
+                class="field_input">
+            </label>
+            <label class="form_field field_login_password">
+              <span class="field_label">
+                Password
+              </span>
+              <input type="password"
+                name="password"
+                class="field_input">
+            </label>
+          
+            <button class="button button_login" type="submit">Log in</button>       
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+    <script type="text/javascript" src="/js/vendor.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script>
+    // window.onload = init();
+    // function init() {
+    //   window.App = new AppController({
+    //     foo: 'bar'
+    //   });
+    // }
+    </script>
+  </body>
+</html>
