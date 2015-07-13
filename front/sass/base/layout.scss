@@ -1,7 +1,17 @@
 body {
   overflow-x: hidden; // remove this!
 }
+
+// main container element
+// TODO: specifically set the widths for this one
 .container {
   margin: auto;
   width: $break;
 }
+
+// sections within the page, currently only used
+// for setting a background color to .section_search
+.section {}
+.section_search {}
+.section_patient_listings {}
+.section_patient_details {}
