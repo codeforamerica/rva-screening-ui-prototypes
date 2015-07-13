@@ -47,6 +47,17 @@
   }
 }
 
+// search field styles
+.patient_search_form {
+  .field_label {
+    font-weight: 500;
+  }
+  .field_input {
+    padding: .4em .5em;
+    font-size: 1.6em;
+  }
+}
+
 
 @media (min-width: $break) {
   .field_first_name { width: $width-third; }
@@ -64,13 +75,12 @@
 
   // expanded search fields
   .field_search_patient_name {
-    width: 20em;
+    width: 50%;
   }
-  .field_search_patient_dob {
-    width: 12em;
-  }
+  .field_search_patient_dob,
   .field_search_patient_ssn {
-    width: 12em;
+    opacity: 0.4;
+    width: 25%;
   }
 
 }
