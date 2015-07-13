@@ -79,8 +79,8 @@ $ui-success: $color-green;
   }
 
   &.list_patient_new,
-  &.list_patient_alert,
-  &.list_patient_success {
+  &.list_patient_warning,
+  &.list_patient_updated {
     &:before {
       font-family: "FontAwesome";
       font-size: .8em;
@@ -98,14 +98,14 @@ $ui-success: $color-green;
       content:"\f10c";
     }
   }
-  &.list_patient_alert {
+  &.list_patient_warning {
     border-right: 5px solid lighten($ui-alert, 20);
     &:before {
       color: $ui-alert;
       content:"\f06a";
     }
   }
-  &.list_patient_success {
+  &.list_patient_updated {
     border-right: 5px solid lighten($ui-success, 20);
     &:before {
       color: $ui-success;

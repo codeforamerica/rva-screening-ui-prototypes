@@ -1,0 +1,41 @@
+$filter-background-color: #f6f6f6;
+$filter-icon-color: darken($filter-background-color, 12);
+$filter-button-background-color: #fff;
+$filter-button-active-background-color: steelblue;
+
+.filter {
+  padding: 1em;
+  margin: 1em 0;
+  background-color: $filter-background-color;
+  &:before {
+    font-family: "FontAwesome";
+    content:"\f1de";
+    font-size: 1.8em;
+    color: $filter-icon-color;
+    margin-right: 1em;
+    display:inline-block;
+    vertical-align:middle;
+  }
+}
+
+.filter_hide {
+  display:none !important;
+}
+
+.filter_button {
+  display:inline-block;
+  vertical-align:middle;
+  border: 1px solid $filter-icon-color;
+  padding: .5em 1em;
+  font-size: .8em;
+  border-radius: 0;
+  margin-right: .5em;
+  text-transform: uppercase;
+  background: $filter-button-background-color;
+  cursor: pointer;
+}
+.filter_button_active {
+  color: $filter-button-background-color;
+  background-color: $filter-button-active-background-color;
+}
+
