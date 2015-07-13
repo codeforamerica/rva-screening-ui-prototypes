@@ -5,46 +5,6 @@
 ** that exist in the database.
 */
 
-@mixin list_reset() {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-@mixin bbox($option: border-box) {
-  -webkit-box-sizing: $option;
-     -moz-box-sizing: $option; 
-          box-sizing: $option;  
-}
-
-@mixin clearfix() {
-  *zoom: 1;
-  &:before,
-  &:after {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
-}
-$break: 50em;
-$color-fuscia: #c71e56;
-$color-lightgray: #c0c0c0;
-
-$color-blue: #4682B4;
-$color-red: #DF4D4A;
-$color-green: #2ECC40;
-
-$ui-new: $color-blue;
-$ui-alert: $color-red;
-$ui-success: $color-green;
-
-.container {
-  max-width: 50em;
-  margin: auto;
-}
-
 .list {
   @include list_reset();
 }
@@ -134,7 +94,7 @@ $ui-success: $color-green;
 
 .list_patient_dob {
   font-weight: 100;
-  color: $color-lightgray;
+  color: $color-gray;
   font-family: monospace;
   @media (min-width: $break) {
     width: 20%;
