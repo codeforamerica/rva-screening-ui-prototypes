@@ -49,13 +49,22 @@ $ui-success: $color-green;
   @include list_reset();
 }
 
-.list_table {}
+.list_table {
+  margin-bottom: 3em;
+  .list_table_title {
+    font-size: 1.4em;
+    font-weight: 900;
+    display:block;
+    margin-bottom: .5em;
+  }
+}
 .list_patient {
   position: relative;
   @include bbox();
   display: block;
   width: 100%;
-  &:nth-child(2n-1) {
+  border-bottom: 1px solid #f6f6f6;
+  &:nth-child(2n) {
     background-color: #f6f6f6;
   }
   a {

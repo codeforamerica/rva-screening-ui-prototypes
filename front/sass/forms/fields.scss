@@ -14,6 +14,13 @@
 // an individual input element in a field
 .field_input {
   display: block;
+  width: 100%;
+  .field_input_large {
+    padding: .7em 1em;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    font-size: 1.23em;
+  }
 }
 
 
