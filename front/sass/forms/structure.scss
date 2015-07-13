@@ -1,17 +1,23 @@
 .form {
 }
 
-
+// a wrapper for a full section of the form, such as "household size"
 .form_section {
+  background-color: $color-lightgray; // placeholder
+  margin-bottom: 5em;
+  padding: 1em;
 }
 
 // a wrapping element for multiple fields that lie on one row
 .form_row {
+  margin-bottom: .5em;
+  .form_field {}
 }
 
 // a single input with associated label and help text
 .form_field {
   display: block;
+  margin-top: .2em;
 }
 
 // two or more inputs that share a label & help text
@@ -25,10 +31,10 @@
 // a form that may be repeated based on the number of items
 // also called many-to-one form
 .form_multiform {
+  .form_field {
+    margin-top: -1px;
+  }
+  border-left: 2px solid blue; // placeholder for denoting a row in many-to-ones
+  padding-left: 10px; // placeholder
+  margin-bottom: .5em;
 }
-
-
-
-
-
-

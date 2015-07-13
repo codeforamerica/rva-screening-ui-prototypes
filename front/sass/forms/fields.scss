@@ -1,10 +1,11 @@
 // a label for a field or a multifield
 .field_label {
+  color: $field-label-color;
 }
-
 
 // flags are short pieces of text that explain something about the field
 .field_flag {
+  color: $field_flag_color;
 }
 
 // help text for a field or multifield
@@ -13,8 +14,31 @@
 
 // an individual input element in a field
 .field_input {
-  display: block;
   width: 100%;
+  &:focus {
+    outline: solid 1px steelblue;
+  }
+}
+
+// an individual select element in a field
+.field_select {
+  height: 2.5em; // this is a hack right now, but padding doesn't work in browsers yet :(
+  &:before {}
+}
+
+.field_input,
+.field_select {
+  background: $color-white;
+  display: block;
+  padding: $bump-small;
+  border: 1px solid $field_border_color;
+  font-family: sans-serif;
+  font-size:1em;
+  font-weight: 100;
+  color: $color-black;
+  @include bbox;
+  width: 100%;
+  @media (min-width: $break) {}
   .field_input_large {
     padding: .7em 1em;
     border-radius: 5px;
@@ -24,18 +48,29 @@
 }
 
 
-.field_first_name {}
-.field_middle_name {}
-.field_last_name {}
-.field_dob {}
-.field_ssn {}
+@media (min-width: $break) {
+  .field_first_name { width: $width-third; }
+  .field_middle_name { width: $width-third; }
+  .field_last_name { width: $width-third; }
+  .field_dob {}
+  .field_ssn {}
 
-.field_search_patient_name {
-  width: 20em;
-}
-.field_search_patient_dob {
-  width: 12em;
-}
-.field_search_patient_ssn {
-  width: 12em;
+  .field_phone_number { width: $width-third; }
+  .field_phone_number_description { width: $width-twothird; }
+
+  .field_address1 {}
+
+  .field_gender {}
+
+  // expanded search fields
+  .field_search_patient_name {
+    width: 20em;
+  }
+  .field_search_patient_dob {
+    width: 12em;
+  }
+  .field_search_patient_ssn {
+    width: 12em;
+  }
+
 }
