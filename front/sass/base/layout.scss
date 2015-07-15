@@ -5,9 +5,16 @@ body {
 // main container element
 // TODO: specifically set the widths for this one
 .container {
-  margin: auto;
-  width: $break;
+  margin:auto;
+  @media (min-width: $break + 2em) {
+    width: $break;
+  }
+  @media (min-width: $break-large + 2em) {
+    width: $break-large;
+  }
 }
+
+
 
 // sections within the page, currently only used
 // for setting a background color to .section_search
