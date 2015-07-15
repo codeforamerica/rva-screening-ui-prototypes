@@ -4,47 +4,6 @@
 ** swipe-enabled sidebar on mobile.
 */
 
-// variables & mixins to use; TODO move into variables.scss
-$color-darkgray: #333;
-$color-white: #fff;
-$color-fuscia: #c71e56;
-$color-black: #111;
-
-$break: 50em; // temporary
-
-@mixin transition($time: .2s) {
-  -webkit-transition: $time;
-     -moz-transition: $time;
-      -ms-transition: $time;
-       -o-transition: $time;
-          transition: $time;
-}
-
-@mixin list_reset() {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-// clearfix should go in globals or base
-.cf:before,
-.cf:after {
-    content:" ";
-    display:table;
-}
-.cf:after {
-    clear:both;
-}
-.cf {
-    *zoom:1;
-}
-
-
-// menu-specific variables
-$nav-sidebar-width: 200px;
-$nav-background-color: $color-fuscia;
-$nav-item-border: 1px solid lighten($nav-background-color, 10);
-
 
 nav {} // DO NOT STYLE :)
 body {
