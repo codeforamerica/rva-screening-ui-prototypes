@@ -1,0 +1,124 @@
+/* * * * * * * * 
+**
+** RANDOM
+** These should eventually be sorted, unless we are using them
+** as helpers across the .scss files. If so, please move to the
+** HELPERS section.
+**
+** * * * * * * */
+
+$width-third: 33%;
+$width-twothird: 66%;
+$width-half: 50%;
+
+/* * * * * * * * 
+**
+** HELPERS
+**
+** * * * * * * */
+
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content:" ";
+    display:table;
+  }
+  &:after {
+    clear:both;
+  }
+  *zoom:1;
+}
+.cf {
+  @include clearfix();
+}
+
+
+// paddings
+$bump-small: 5px;
+
+
+/* * * * * * * * 
+**
+** BREAKS & MEDIA QUERIES
+**
+** * * * * * * */
+$break: 50em;
+
+
+/* * * * * * * * 
+**
+** COLORS
+**
+** * * * * * * */
+
+$color-black: #111;
+$color-white: #fff;
+$color-gray: #c0c0c0;
+$color-darkgray: #999;
+$color-lightgray: #f6f6f6;
+
+$color-blue: steelblue;
+$color-red: #DF4D4A;
+$color-green: #2ECC40;
+$color-fuscia: #c71e56;
+
+/* * * * * * * * 
+**
+** UI - GENERAL
+** This naming scheme is questionable - would love to see where
+** it actually goes. It's a bit similar to mixins & helpers ...
+**
+** * * * * * * */
+
+$ui-new: $color-blue;
+$ui-alert: $color-red;
+$ui-success: $color-green;
+
+
+/* * * * * * * * 
+**
+** BASE
+**
+** * * * * * * */
+
+$text-color: $color-black;
+$background-color: $color-lightgray;
+
+
+/* * * * * * * * 
+**
+** FORMS
+**
+** * * * * * * */
+
+$field_border_color: $color-darkgray;
+
+// field_label
+$field_label_color: $color-black;
+
+// flags
+$field_flag_color: $color-darkgray;
+
+
+/* * * * * * * * 
+**
+** FILTERS
+**
+** * * * * * * */
+
+$filter-background-color: $color-lightgray;
+$filter-icon-color: darken($filter-background-color, 12);
+$filter-button-background-color: $color-white;
+$filter-button-active-background-color: $color-blue;
+
+
+/* * * * * * * * 
+**
+** SEARCH - PATIENT SEARCH
+**
+** * * * * * * */
+
+$section_search_background_color: $color-lightgray;
+$search_input_optional_width: 25%;
+$search_input_optional_color: $color-gray;
+

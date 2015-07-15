@@ -2,4 +2,5 @@ node_modules
 .env
 *.sw[op]
 app/static
+.DS_Store
 __pycache__

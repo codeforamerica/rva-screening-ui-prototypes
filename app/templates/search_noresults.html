@@ -1,0 +1,312 @@
+
+<html lang="en">
+<head>
+  <title>RVA Screener</title>
+  <meta name="viewport" content="width=device-width" charset="utf-8">
+  <link href="/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <!-- temporary include of mapbox.js for testing -->
+  <!-- <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script> -->
+  <!-- <link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' /> -->
+  <!-- /mapbox.js -->
+</head>
+  <body>
+  
+  <nav class="nav cf" id="nav">
+    <div class="nav_logo">SCREENER</div>
+    <div class="nav_menu">
+      <ul class="nav_menu_list">
+        <li class="menu_list_item"><a href="#">Prescreen</a></li>
+        <li class="menu_list_item"><a href="#">View Your Patients</a></li>
+        <li class="menu_list_item"><a href="#">Find Patient In Your Network</a></li>
+        <li class="menu_list_item"><a href="#">Create Patient</a></li>
+      </ul>
+    </div>
+    <div class="nav_user">
+      <a href="#" class="nav_user_profile">sam</a> / <a href="#">logout</a>
+    </div>
+  </nav>
+
+  <section class="section_search">
+    <div class="container">
+      <!-- <h1>RVA Screener</h1> -->
+
+      <!-- <div class="form_field">
+        <input type="text" class="search field_input field_input_big" placeholder="Search your patients..."/>
+      </div> -->
+
+      <h2>New/Search Patient</h2>
+
+      <div class="patient_search_form form_row">
+        <label class="form_field field_search_patient_name">
+          <span class="field_label">
+            Patient Name
+          </span>
+          <input type="text"
+            class="field_input"
+            name="search_patient_name">
+        </label>
+
+        <label class="form_field field_search_patient_dob">
+          <span class="field_label">
+            Date of Birth
+          </span>
+          <input type="text"
+            class="field_input"
+            name="search_patient_dob">
+        </label>
+
+        <label class="form_field field_search_patient_ssn">
+          <span class="field_label">
+            SSN
+          </span>
+          <input type="text"
+            class="field_input"
+            name="search_patient_ssn">
+        </label>
+      </div>
+
+      <div class="search_results">
+        <ul class="list list_table">
+          <li class="no_results">
+            <i class="fa fa-exclamation-circle"></i> No patients matched the search query.<br><br>
+            <a href="#" class="button button_add_new_patient">
+              <span class="list_patient_item list_patient_name"><i class="fa fa-plus"></i> Create a new patient record with this name</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+
+  <div class="container">
+    <div class="filter" id="filter"></div>
+    
+    <ul class="list list_table">
+      <span class="list_table_title">New Patients</span>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name ">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+
+      <li class="list_patient list_patient_warning">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+    </ul>
+
+
+    <ul class="list list_table">
+      <span class="list_table_title">Other</span>
+      <li class="list_patient list_patient_new">
+        <a href="#">
+          <span class="list_patient_item list_patient_name ">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+
+      <li class="list_patient list_patient_warning">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient list_patient_updated">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient list_patient_updated">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient list_patient_warning">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name that happens to be really long!</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+      <li class="list_patient">
+        <a href="#">
+          <span class="list_patient_item list_patient_name">Patient Name</span>
+          <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+          <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+        </a>
+      </li>
+
+
+      
+    </ul>
+  </div>
+    <script type="text/javascript" src="/js/vendor.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
+    <script>
+    window.onload = init();
+    function init() {
+      window.App = new AppController({
+        foo: 'bar'
+      });
+
+      window.F = new Filter({
+        id: "filter",
+        filterClass: 'list_patient',
+        filters: [
+          { name: "New", id: "list_patient_new" },
+          { name: "Recently Updated", id: "list_patient_updated" },
+          { name: "Warning", id: "list_patient_warning" }
+        ]
+      });
+    }
+    </script>
+  </body>
+</html>
