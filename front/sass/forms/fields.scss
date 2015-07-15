@@ -58,10 +58,20 @@
   }
 }
 
-
-// currently have all of this set within a break point to ensure
-// we don't forget about mobile-specific stylings. Feel free to remove 
-// as you see fit!
+.field_search_patient_name {
+  width: 100%;
+}
+.field_search_patient_dob,
+.field_search_patient_ssn {
+  width: 50%;
+  .field_label {
+    color: $search_input_optional_color;
+  }
+  .field_input {
+    border: 1px solid $search_input_optional_color;
+    color: lighten($color-black, 50);
+  }
+}
 @media (min-width: $break) {
   .field_first_name { width: $width-third; }
   .field_middle_name { width: $width-third; }
@@ -81,14 +91,7 @@
   }
   .field_search_patient_dob,
   .field_search_patient_ssn {
-    // opacity: 0.4;
     width: $search_input_optional_width;
-    .field_label {
-      color: $search_input_optional_color;
-    }
-    .field_input {
-      border: 1px solid $search_input_optional_color;
-    }
   }
 
 }

@@ -6,11 +6,12 @@ body {
 // TODO: specifically set the widths for this one
 .container {
   margin:auto;
-  @media (min-width: $break + 2em) {
-    width: $break;
+  padding: 0 1em;
+  @media (min-width: $break) {
+    width: $break - 2em;
   }
-  @media (min-width: $break-large + 2em) {
-    width: $break-large;
+  @media (min-width: $break-large) {
+    width: $break-large - 2em;
   }
 }
 

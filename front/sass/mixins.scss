@@ -11,3 +11,12 @@
      -moz-box-sizing: $option; 
           box-sizing: $option;  
 }
+
+// transition
+@mixin transition($time: .2s) {
+  -webkit-transition: $time;
+     -moz-transition: $time;
+      -ms-transition: $time;
+       -o-transition: $time;
+          transition: $time;
+}

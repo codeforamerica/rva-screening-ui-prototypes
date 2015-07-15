@@ -89,6 +89,16 @@ $background-color: $color-lightgray;
 
 /* * * * * * * * 
 **
+** MAIN NAVIGATION
+**
+** * * * * * * */
+$nav-sidebar-width: 200px;
+$nav-background-color: $color-fuscia;
+$nav-item-border: 1px solid lighten($nav-background-color, 10);
+
+
+/* * * * * * * * 
+**
 ** FORMS
 **
 ** * * * * * * */

@@ -1,14 +1,42 @@
-@mixin button($bg-color: $color-lightgray, $text-color: $color-black, $radius: 0px, $padding: .5em 1em) {
+@mixin button($bg-color: $color-lightgray, $text-color: $color-black, $radius: 0.4em, $padding: 0.5em 1em) {
+  @include button_color($bg-color, $text-color);
   padding: $padding;
   border-radius: $radius;
-  background-color: $bg-color;
   color: $text-color;
   display: inline-block;
   border: none;
   cursor: pointer;
-  font-size:.8em;
+  font-size: 1em;
+}
+
+@mixin button_color($color, $text: $color-white) {
+  color: $text;
+  background: $color;
   &:hover {
-    background-color: darken($bg-color, 10);
+    background: darken($color, 10);
+  }
+}
+
+.button_icon {
+  font-family: "FontAwesome";
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1px;
+}
+
+@mixin icon_before($content, $margin: 1em) {
+  &:before {
+    @extend .button_icon;
+    content: $content;
+    margin-right: $margin;
+  }
+}
+
+@mixin icon_after($content, $margin: 1em) {
+  &:after {
+    @extend .button_icon;
+    content: $content;
+    margin-left: $margin;
   }
 }
 
@@ -16,12 +44,30 @@
 .button {
   @include button();
 
-  &.large {
-    font-size: 1em;
+  &.button_large {
+    font-size: 1.3em;
+  }
+  &.button_small {
+    font-size: .8em
+  }
+
+  &.button_fat {
+    padding: 1.5em;
+  }
+  &.button_add {
+    @include icon_after("\f067");
+  }
+
+  &.button_blue {
+    @include button_color($color-blue);
+  }
+  &.button_green {
+    @include button_color($color-green);
   }
 }
 
 // buttons in multifield (many-to-one) envrionments
+// TODO: turn into .button_add class
 .button_multiform_addrow {
   @include button();
   &:before {
@@ -29,8 +75,4 @@
     font-family: "FontAwesome";
     margin-right: .5em;
   }
-}
-
-.button_form_save {
-  @include button($color-green, $color-white);
 }
