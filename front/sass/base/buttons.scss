@@ -17,7 +17,7 @@
   }
 }
 
-.button_icon {
+%button_icon {
   font-family: "FontAwesome";
   display: inline-block;
   vertical-align: middle;
@@ -34,7 +34,7 @@
 
 @mixin icon_after($content, $margin: 1em) {
   &:after {
-    @extend .button_icon;
+    @extend %button_icon;
     content: $content;
     margin-left: $margin;
   }
