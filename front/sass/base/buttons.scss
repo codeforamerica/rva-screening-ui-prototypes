@@ -17,16 +17,9 @@
   }
 }
 
-%button_icon {
-  font-family: "FontAwesome";
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 1px;
-}
-
 @mixin icon_before($content, $margin: 1em) {
   &:before {
-    @extend .button_icon;
+    @extend %icon;
     content: $content;
     margin-right: $margin;
   }
@@ -34,7 +27,7 @@
 
 @mixin icon_after($content, $margin: 1em) {
   &:after {
-    @extend %button_icon;
+    @extend %icon;
     content: $content;
     margin-left: $margin;
   }
