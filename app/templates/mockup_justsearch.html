@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <section class="section_search outer">
+    <div class="container inner">
+      <div style="display: block; width: 50em; margin: auto;">
+        <h2>New/Search Patient</h2>
+
+        {% include "includes/search_form.html" %}
+
+        <div class="search_results">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+{% endblock %}

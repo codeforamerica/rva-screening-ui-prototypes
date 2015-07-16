@@ -26,9 +26,9 @@
   @include bbox();
   display: block;
   width: 100%;
-  border-bottom: 1px solid #f6f6f6;
-  &:nth-child(2n) {
-    background-color: #f6f6f6;
+  border-bottom: 1px solid #e5e5e5;
+  &:first-child() {
+    border-top: 1px solid #e5e5e5;
   }
   a {
     display:block;
@@ -44,10 +44,7 @@
   }
 
   &:hover {
-    background-color: $color-fuscia;
-    .list_patient_item {
-      color: $color-white;
-    }
+    background-color: $color-lightgray;
   }
 
   &.list_patient_new,
@@ -55,7 +52,7 @@
   &.list_patient_updated {
     &:before {
       font-family: "FontAwesome";
-      font-size: .8em;
+      font-size: 0.8em;
       @media (min-width: $break) {
         position:absolute;
         left: -22px;
@@ -64,28 +61,16 @@
     }
   }
   &.list_patient_new {
-    border-right: 5px solid lighten($ui-new, 20);
-    &:before {
-      color: $ui-new;
-      content:"\f10c";
-    }
+    border-left: 5px solid lighten($ui-new, 20);
   }
   &.list_patient_warning {
-    border-right: 5px solid lighten($ui-alert, 20);
-    &:before {
-      color: $ui-alert;
-      content:"\f06a";
-    }
+    border-left: 5px solid lighten($ui-alert, 20);
   }
   &.list_patient_updated {
-    border-right: 5px solid lighten($ui-success, 20);
-    &:before {
-      color: $ui-success;
-      content:"\f058";
-    }
+    border-left: 5px solid lighten($ui-success, 20);
   }
   &.list_patient_outside_network {
-    opacity: .3;
+    opacity: 0.3;
   }
 }
 
@@ -109,10 +94,14 @@
 
 .list_patient_edits {
   color: $color-black;
-  font-size: .9em;
+  font-size: 0.9em;
   @media (min-width: $break) {
     text-align: right;
     width: 43%;
   }
 }
+
+// showing up-to-date statistics
+// not sure where these styles should go presently
+
 

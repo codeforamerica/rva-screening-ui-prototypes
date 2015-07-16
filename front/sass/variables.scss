@@ -32,6 +32,26 @@ $width-half: 50%;
   @include clearfix();
 }
 
+/* @extends %icon;
+** For working with :before and :after pseudo selectors 
+** and adding icons to the content. 
+*/
+%icon {
+  font-family: "FontAwesome";
+}
+
+// vert/horizontal centering helpers
+.outer {
+  display: table;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 
 // paddings
 $bump-small: 5px;
@@ -122,6 +142,8 @@ $filter-icon-color: darken($filter-background-color, 12);
 $filter-button-background-color: $color-white;
 $filter-button-active-background-color: $color-blue;
 
+$filter-arrow-dimension: 10px;
+
 
 /* * * * * * * * 
 **
@@ -132,4 +154,25 @@ $filter-button-active-background-color: $color-blue;
 $section_search_background_color: $color-lightgray;
 $search_input_optional_width: 25%;
 $search_input_optional_color: $color-gray;
+
+
+/* * * * * * * * 
+**
+** SIDEBAR
+**
+** * * * * * * */
+
+$sidebar-margin: 2em;
+$sidebar-background-color: $color-lightgray;
+$sidebar-title-color: $color-darkgray;
+
+
+/* * * * * * * * 
+**
+** STATS
+**
+** * * * * * * */
+
+$stat-number-text-color: $color-fuscia;
+
 

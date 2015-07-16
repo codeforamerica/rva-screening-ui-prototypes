@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <div class="container">
+
+    <div class="block_3 sidebar">
+      <!-- <div class="filter" id="filter"></div> -->
+
+      
+      <button class="filter filter_statistic">
+        <span class="statistic_number">145</span>
+        <span class="statistic_text"><strong>Total patients</strong> at Richmond Resource Centers.</span>
+      </button>
+
+      <button class="filter filter_statistic filter_active">
+        <span class="statistic_number">8</span>
+        <span class="statistic_text">Patients have been updated <strong>today</strong>.</span>
+      </button>
+
+      <button class="filter filter_statistic">
+        <span class="statistic_number">13</span>
+        <span class="statistic_text"><strong>New patients</strong> in the last week.</span>
+      </button>
+
+      <button class="filter filter_statistic">
+        <span class="statistic_number">21</span>
+        <span class="statistic_text">Patients have visited <strong>other clinics</strong> in the past month.</span>
+      </button>
+
+      <button class="filter filter_statistic">
+        <span class="statistic_number">54</span>
+        <span class="statistic_text">Patients <strong>haven't been updated</strong> in over a year.</span>
+      </button>
+    </div>
+
+    <div class="block_9 block_padding">
+      <h4>Viewing patients at <strong>Richmond Resource Center</strong></h4>
+
+      <ul class="list list_table">
+        <li class="list_patient">
+          <a href="#">
+            <span class="list_patient_item list_patient_name ">Patient Name</span>
+            <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+            <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+          </a>
+        </li>
+
+        <li class="list_patient">
+          <a href="#">
+            <span class="list_patient_item list_patient_name">Patient Name</span>
+            <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+            <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+          </a>
+        </li>
+        <li class="list_patient">
+          <a href="#">
+            <span class="list_patient_item list_patient_name">Patient Name</span>
+            <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+            <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+          </a>
+        </li>
+        <li class="list_patient">
+          <a href="#">
+            <span class="list_patient_item list_patient_name">Patient Name</span>
+            <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+            <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+          </a>
+        </li>
+        <li class="list_patient">
+          <a href="#">
+            <span class="list_patient_item list_patient_name">Patient Name</span>
+            <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+            <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+          </a>
+        </li>
+        <li class="list_patient">
+          <a href="#">
+            <span class="list_patient_item list_patient_name">Patient Name</span>
+            <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+            <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+          </a>
+        </li>
+        <li class="list_patient">
+          <a href="#">
+            <span class="list_patient_item list_patient_name">Patient Name</span>
+            <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+            <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+          </a>
+        </li>
+        <li class="list_patient">
+          <a href="#">
+            <span class="list_patient_item list_patient_name">Patient Name</span>
+            <span class="list_patient_item list_patient_dob">DOB: 10/12/1981</span>
+            <span class="list_patient_item list_patient_edits">Richmond Resource Center</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+{% endblock %}
+
+
+{% block script %}
+<script>
+window.onload = init();
+function init() {
+  window.App = new AppController({
+    foo: 'bar'
+  });
+
+  window.F = new Filter({
+    id: "filter",
+    filterClass: 'list_patient',
+    filters: [
+      { name: "New", id: "list_patient_new" },
+      { name: "Recently Updated", id: "list_patient_updated" },
+      { name: "Warning", id: "list_patient_warning" }
+    ]
+  });
+}
+</script>
+{% endblock %}
