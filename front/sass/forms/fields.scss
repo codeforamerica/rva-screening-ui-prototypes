@@ -94,3 +94,213 @@
   }
 
 }
+
+// working checkbox examples
+.field_checkbox {
+  &:hover {
+    cursor: pointer;
+  }
+  &.example_1 {
+    display: inline-block;
+    padding: 1em;
+    font-size: 1em;
+    background-color: $color-lightgray;
+  }
+
+
+  &.example_2 {
+    display: inline-block;
+    padding: 1.2em;
+    font-size: 1.2em;
+    background-color: $color-lightgray;
+    
+    .field_checkbox_brick {
+      width: 22px;
+      height: 22px;
+      background: transparent;
+      border: 1px solid $color-fuscia;
+      float: left;
+      margin-right: 1em;
+    }
+
+    input[type="checkbox"] {
+      opacity: 0;
+      display: none;
+    }
+
+    input[type="checkbox"]:checked ~ .field_checkbox_brick {
+      background: $color-fuscia;
+    }
+  }
+
+  &.example_3 {    
+    .field_checkbox_label {
+      display: inline-block;
+      font-size: 1.2em;
+      padding: 1.2em;
+      background-color: $color-lightgray;
+      color: $color-gray;
+      text-decoration: line-through;
+    }
+
+    &:hover {
+      .field_checkbox_label {
+        background-color: #e5e5e5;
+      }
+    }
+
+    input[type="checkbox"] {
+      opacity: 0;
+      display: none;
+    }
+
+    input[type="checkbox"]:checked ~ .field_checkbox_label {
+      background: $color-fuscia;
+      color: $color-lightgray;
+      text-decoration: none;
+    }
+  }
+
+  &.example_4 {
+    .field_checkbox_content {
+      width: 250px;
+      margin: 3px 1px;
+      display: inline-block;
+      font-size: 1.2em;
+      padding: 1.2em;
+      background-color: $color-lightgray;
+      color: $color-gray;
+      .field_checkbox_content_title {
+        display: block;
+        text-decoration: line-through;
+      }
+      .field_checkbox_content_text {
+        display: block;
+        font-size: .7em;
+        a {
+          text-decoration: underline;
+          color: $color-darkgray;
+        }
+      }
+    }
+
+    &:hover {
+      .field_checkbox_label {
+        background-color: #e5e5e5;
+      }
+    }
+
+    input[type="checkbox"] {
+      opacity: 0;
+      display: none;
+    }
+
+    input[type="checkbox"]:checked ~ .field_checkbox_content {
+      background: $color-blue;
+      color: $color-lightgray;
+      .field_checkbox_content_title {
+        text-decoration: none;
+      }
+      .field_checkbox_content_text {
+        a {
+          color: $color-white;
+        }
+      }
+    }
+  }
+
+  &.example_5 {
+    .field_checkbox_content {
+      width: 250px;
+      margin: 3px 1px;
+      display: inline-block;
+      vertical-align: top;
+      font-size: 1.2em;
+      color: $color-gray;
+      .field_checkbox_content_title {
+        padding: 0.5em;
+        background-color: #e5e5e5;
+        display: block;
+        &:before {
+          @extend %icon;
+          content: "\f096";
+          margin-right: 0.4em;
+        }
+      }
+      .field_checkbox_content_text {
+        background-color: $color-lightgray;
+        padding: 0.1em 0.8em 0.8em;
+        display: block;
+        font-size: 0.7em;
+        color: $color-darkgray;
+        a {
+          text-decoration: underline;
+          color: $color-darkgray;
+        }
+      }
+    }
+
+    input[type="checkbox"] {
+      opacity: 0;
+      display: none;
+    }
+
+    input[type="checkbox"]:checked ~ .field_checkbox_content {
+      color: $color-lightgray;
+      .field_checkbox_content_title {
+        text-decoration: none;
+        background: $color-fuscia;
+        &:before {
+          @extend %icon;
+          content: "\f046";
+          margin-right: 0.4em;
+        }
+      }
+      .field_checkbox_content_text {
+        background: $color-fuscia;
+        color: $color-lightgray;
+        a {
+          color: $color-white;
+        }
+      }
+    }
+
+    &:hover {
+      .field_checkbox_content_label,
+      .field_checkbox_content_text {
+        color: $color-darkgray;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
