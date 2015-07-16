@@ -45,7 +45,7 @@ body {
 .block_10,
 .block_11,
 .block_12 {
-  padding: 1.5em;
+  // padding: 1.5em;
   display: block;
   @include bbox();
   @media (min-width: $break) {
@@ -53,6 +53,9 @@ body {
   }
   &.block_right {
     float: right;
+  }
+  &.block_padding {
+    padding: 1.5em;
   }
 }
 

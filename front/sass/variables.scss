@@ -142,6 +142,8 @@ $filter-icon-color: darken($filter-background-color, 12);
 $filter-button-background-color: $color-white;
 $filter-button-active-background-color: $color-blue;
 
+$filter-arrow-dimension: 10px;
+
 
 /* * * * * * * * 
 **
@@ -172,3 +174,5 @@ $sidebar-title-color: $color-darkgray;
 ** * * * * * * */
 
 $stat-number-text-color: $color-fuscia;
+
+
