@@ -6,18 +6,11 @@
 
 
 nav {} // DO NOT STYLE :)
-body {
-  padding: 0; margin: 0;
-  font-family: sans-serif;
-}
 body.menu_open {
   overflow:hidden;
   .nav {
     left: 0;
   }
-}
-a {
-  text-decoration: none;
 }
 
 // the nav wrapper, element, and all around chill dude
