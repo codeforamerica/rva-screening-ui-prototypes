@@ -1,5 +1,6 @@
 body {
   overflow-x: hidden; // remove this!
+  font-family: arial, sans-serif;
 }
 
 // main container element
@@ -25,7 +26,6 @@ body {
 .section_patient_details {}
 
 
-
 // block sections, to be used within .containers
 // all exist on a 12 unit grid and are relative in 
 // size to the container element
@@ -45,8 +45,9 @@ body {
 .block_10,
 .block_11,
 .block_12 {
+  padding: 1.5em;
   display: block;
-  @mixin bbox();
+  @include bbox();
   @media (min-width: $break) {
     float: left;
   }
@@ -55,15 +56,17 @@ body {
   }
 }
 
-.block_1 { @include width(1); }
-.block_2 { @include width(2); }
-.block_3 { @include width(3); }
-.block_4 { @include width(4); }
-.block_5 { @include width(5); }
-.block_6 { @include width(6); }
-.block_7 { @include width(7); }
-.block_8 { @include width(8); }
-.block_9 { @include width(9); }
-.block_10 { @include width(10); }
-.block_11 { @include width(11); }
-.block_12 { @include width(12); }
+@media (min-width: $break) {
+  .block_1 { @include width(1); }
+  .block_2 { @include width(2); }
+  .block_3 { @include width(3); }
+  .block_4 { @include width(4); }
+  .block_5 { @include width(5); }
+  .block_6 { @include width(6); }
+  .block_7 { @include width(7); }
+  .block_8 { @include width(8); }
+  .block_9 { @include width(9); }
+  .block_10 { @include width(10); }
+  .block_11 { @include width(11); }
+  .block_12 { @include width(12); }
+}

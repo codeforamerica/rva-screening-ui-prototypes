@@ -61,25 +61,13 @@
     }
   }
   &.list_patient_new {
-    border-right: 5px solid lighten($ui-new, 20);
-    &:before {
-      color: $ui-new;
-      content:"\f10c";
-    }
+    border-left: 5px solid lighten($ui-new, 20);
   }
   &.list_patient_warning {
-    border-right: 5px solid lighten($ui-alert, 20);
-    &:before {
-      color: $ui-alert;
-      content:"\f06a";
-    }
+    border-left: 5px solid lighten($ui-alert, 20);
   }
   &.list_patient_updated {
-    border-right: 5px solid lighten($ui-success, 20);
-    &:before {
-      color: $ui-success;
-      content:"\f058";
-    }
+    border-left: 5px solid lighten($ui-success, 20);
   }
   &.list_patient_outside_network {
     opacity: 0.3;
@@ -111,5 +99,18 @@
     text-align: right;
     width: 43%;
   }
+}
+
+// showing up-to-date statistics
+// not sure where these styles should go presently
+.statistic {}
+.statistic_number {
+  display: block;
+  font-size: 3em;
+  font-weight: 900;
+  color: $stat-number-text-color;
+}
+.statistic_text {
+  font-weight: 100;
 }
 

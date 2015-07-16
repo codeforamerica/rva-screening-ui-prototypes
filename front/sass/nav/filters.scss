@@ -1,16 +1,7 @@
 .filter {
-  padding: 1em;
   margin: 1em 0;
-  background-color: $filter-background-color;
-  &:before {
-    font-family: "FontAwesome";
-    content:"\f1de";
-    font-size: 1.8em;
-    color: $filter-icon-color;
-    margin-right: 1em;
-    display:inline-block;
-    vertical-align:middle;
-  }
+  padding-bottom: 1em;
+  border-bottom: 1px solid darken($sidebar-background-color, 7);
 }
 
 .filter_hide {
@@ -18,19 +9,29 @@
 }
 
 .filter_button {
-  display:inline-block;
-  vertical-align:middle;
-  border: 1px solid $filter-icon-color;
-  padding: .5em 1em;
-  font-size: .8em;
-  border-radius: 0;
-  margin-right: .5em;
+  display:block;
+  width: 100%;
+  text-align: left;
+  border: none;
+  padding: .6em;
+  margin-bottom: 0.3em;
+  font-size: 0.8em;
   text-transform: uppercase;
-  background: $filter-button-background-color;
   cursor: pointer;
+  &:hover {
+    font-weight: 900;
+  }
+  &:before {
+    @extend %icon;
+    content:"\f10c";
+    margin-right: 0.5em;
+  }
 }
 .filter_button_active {
-  color: $filter-button-background-color;
-  background-color: $filter-button-active-background-color;
+  font-weight: 900;
+  &:before {
+    @extend %icon;
+    content:"\f111";
+  }
 }
 

@@ -38,9 +38,6 @@ $width-half: 50%;
 */
 %icon {
   font-family: "FontAwesome";
-  display: inline-block;
-  vertical-align: middle;
-  line-height: 1px;
 }
 
 // vert/horizontal centering helpers
@@ -156,3 +153,22 @@ $section_search_background_color: $color-lightgray;
 $search_input_optional_width: 25%;
 $search_input_optional_color: $color-gray;
 
+
+/* * * * * * * * 
+**
+** SIDEBAR
+**
+** * * * * * * */
+
+$sidebar-margin: 2em;
+$sidebar-background-color: $color-lightgray;
+$sidebar-title-color: $color-darkgray;
+
+
+/* * * * * * * * 
+**
+** STATS
+**
+** * * * * * * */
+
+$stat-number-text-color: $color-fuscia;

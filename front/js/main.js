@@ -189,6 +189,7 @@ var Filter = function(options) {
 
 Filter.prototype._build = function(filters) {
   // build the 'all' filter first
+  this.filter_element.innerHTML = '<span class="sidebar_title"><i class="fa fa-sliders"></i> Filter Patients</span>';
   this.filter_element.appendChild(this._createFilter('All', 'all', true));
   var _this = this;
   for (var i = 0; i < filters.length; ++i) {
