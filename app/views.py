@@ -9,6 +9,7 @@ templates = {
         'patient_details': 'A direct HTML copy of patient details from rva-screening',
         'search_noresults': 'An example of an expanded search without any results',
         'search_results': 'An example of expanded search with some results',
+        'search_results2': 'Expanded search with add a patient on the right-hand side.',
         'search_searching': 'An example of expanded search performing a search',
         'landing': 'A working version of the landing page after a user logs into the app'
         }
