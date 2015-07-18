@@ -5,6 +5,9 @@
 ** that exist in the database.
 */
 
+$list-padding: 5px;
+$list-padding-large: 1em;
+
 .list {
   @include list_reset();
 }
@@ -12,7 +15,7 @@
 .list_table {
   margin-top: 3em;
   .list_table_title {
-    font-size: 1.4em;
+    font-size: 1.2em;
     font-weight: 900;
     display:block;
     margin-bottom: .5em;
@@ -20,10 +23,19 @@
       font-size: 1em;
     }
   }
+
+  &.list_padding_large {
+    .list_row {
+      a {
+        padding: $list-padding-large $list-padding;
+      }
+    }
+  }
 }
-.list_patient {
+.list_row {
   position: relative;
   @include bbox();
+  @include clearfix();
   display: block;
   width: 100%;
   border-bottom: 1px solid #e5e5e5;
@@ -32,13 +44,13 @@
   }
   a {
     display:block;
-    padding: 10px;
+    @include clearfix();
+    padding: $list-padding;
   }
-  .list_patient_item {
-    // text-size: 0px;
+  .list_row_item {
     display:block;
     @media (min-width: $break) {
-      display: inline-block;
+      float:left;
       vertical-align: top;
     }
   }
@@ -47,9 +59,9 @@
     background-color: $color-lightgray;
   }
 
-  &.list_patient_new,
-  &.list_patient_warning,
-  &.list_patient_updated {
+  &.list_row_new,
+  &.list_row_warning,
+  &.list_row_updated {
     &:before {
       font-family: "FontAwesome";
       font-size: 0.8em;
@@ -60,21 +72,21 @@
       }
     }
   }
-  &.list_patient_new {
+  &.list_row_new {
     border-left: 5px solid lighten($ui-new, 20);
   }
-  &.list_patient_warning {
+  &.list_row_warning {
     border-left: 5px solid lighten($ui-alert, 20);
   }
-  &.list_patient_updated {
+  &.list_row_updated {
     border-left: 5px solid lighten($ui-success, 20);
   }
-  &.list_patient_outside_network {
+  &.list_row_outside_network {
     opacity: 0.3;
   }
 }
 
-.list_patient_name {
+.list_row_name {
   font-weight: 700;
   color: $color-fuscia;
 
@@ -83,16 +95,16 @@
   }
 }
 
-.list_patient_dob {
+.list_row_dob {
   font-weight: 100;
   color: $color-gray;
   font-family: monospace;
-  @media (min-width: $break) {
-    width: 20%;
-  }
+  // @media (min-width: $break) {
+  //   width: 20%;
+  // }
 }
 
-.list_patient_edits {
+.list_row_edits {
   color: $color-black;
   font-size: 0.9em;
   @media (min-width: $break) {

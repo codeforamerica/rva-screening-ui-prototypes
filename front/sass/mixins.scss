@@ -1,3 +1,29 @@
+/* * * * * * * * 
+**
+** MIXINS
+**
+** * * * * * * */
+
+// clearfix
+@mixin clearfix() {
+  &:before,
+  &:after {
+    content:" ";
+    display:table;
+  }
+  &:after {
+    clear:both;
+  }
+  *zoom:1;
+}
+.cf {
+  @include clearfix();
+}
+
+.pull_left {
+  float: left;
+}
+
 // resetting lists
 @mixin list_reset() {
   list-style-type: none;
@@ -19,4 +45,19 @@
       -ms-transition: $time;
        -o-transition: $time;
           transition: $time;
+}
+
+
+/* * * * * * * * 
+**
+** INCLUDES
+**
+** * * * * * * */
+
+/* @extends %icon;
+** For working with :before and :after pseudo selectors 
+** and adding icons to the content. 
+*/
+%icon {
+  font-family: "FontAwesome";
 }

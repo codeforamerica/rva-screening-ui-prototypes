@@ -12,6 +12,7 @@ templates = {
         'search_results2': 'Expanded search with add a patient on the right-hand side.',
         'search_searching': 'An example of expanded search performing a search',
         'landing': 'A working version of the landing page after a user logs into the app',
+        'mockup_prescreener': 'Version of prescreener with new checkboxes and table layout',
         'mockup_checkbox': 'Different examples of checkboxes'
         }
 
