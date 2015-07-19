@@ -12,6 +12,18 @@
   }
 }
 
+// vert/horizontal centering helpers
+.outer {
+  display: table;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.inner {
+  display: table-cell;
+  vertical-align: middle;
+}
+
 
 // sections within the page, currently only used
 // for setting a background color to .section_search
@@ -28,6 +40,10 @@
   width: 100% * ($num / 12)
 }
 
+.row {
+  @include clearfix();
+}
+
 .block_1,
 .block_2,
 .block_3,
@@ -40,7 +56,6 @@
 .block_10,
 .block_11,
 .block_12 {
-  // padding: 1.5em;
   display: block;
   @include bbox();
   @media (min-width: $break) {

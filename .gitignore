@@ -4,3 +4,4 @@ node_modules
 app/static
 .DS_Store
 __pycache__
+*.pyc

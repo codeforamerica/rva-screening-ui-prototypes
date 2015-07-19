@@ -1,0 +1,312 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <div class="container">
+
+    <h1>CURRENT</h1>
+
+    <form method="post">   
+      
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" class="text" value="1" name="services" checked="true">
+            Daily Planet
+          </label>
+        </div>
+      
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" class="text" value="2" name="services" checked="true">
+            CrossOver
+          </label>
+        </div>
+      
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" class="text" value="3" name="services" checked="true">
+            Access Now
+          </label>
+        </div>
+      
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" class="text" value="4" name="services" checked="true">
+            RCHD Resource Centers
+          </label>
+        </div>
+
+      <button class="btn btn-primary"  type="submit">Check eligibility</button>       
+    </form>
+
+    <h1>CHECKBOX STYLES</h1>
+
+    
+
+
+    <form method="post">   
+      
+      <label class="field_checkbox">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Checked</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Hover</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox">
+        <input type="checkbox" class="text" value="1" name="services">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Not Selected</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox">
+        <input type="checkbox" class="text" value="1" name="services" disabled="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Disabled</span>
+        </span>
+      </label>
+
+      <br><br>
+
+      <label class="field_checkbox checkbox_blue">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Checked</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_blue">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Hover</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_blue">
+        <input type="checkbox" class="text" value="1" name="services">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Not Selected</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_blue">
+        <input type="checkbox" class="text" value="1" name="services" disabled="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Disabled</span>
+        </span>
+      </label>
+
+      <br><br>
+
+      <label class="field_checkbox checkbox_red">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Checked</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_red">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Hover</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_red">
+        <input type="checkbox" class="text" value="1" name="services">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Not Selected</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_red">
+        <input type="checkbox" class="text" value="1" name="services" disabled="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Disabled</span>
+        </span>
+      </label>
+
+      <br><br>
+
+      <label class="field_checkbox checkbox_green">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Checked</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_green">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Hover</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_green">
+        <input type="checkbox" class="text" value="1" name="services">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Not Selected</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_green">
+        <input type="checkbox" class="text" value="1" name="services" disabled="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Disabled</span>
+        </span>
+      </label>
+
+      <br><br><br>
+      <button class="button button_blue"  type="submit">Check eligibility</button>       
+    </form>
+
+    <form method="post">   
+      
+      <label class="field_checkbox checkbox_extra">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Daily Planet</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_extra">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Crossover</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_extra">
+        <input type="checkbox" class="text" value="1" name="services">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Access Now</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_extra">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">RCHD Resource Centers</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <br><br>
+
+      <label class="field_checkbox checkbox_extra checkbox_blue">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Daily Planet</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_extra checkbox_blue">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Crossover</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_extra checkbox_blue">
+        <input type="checkbox" class="text" value="1" name="services">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Access Now</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_extra checkbox_blue">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">RCHD Resource Centers</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <br><br>
+
+      <label class="field_checkbox checkbox_extra checkbox_red">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Daily Planet</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_extra checkbox_red">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Crossover</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_extra checkbox_red">
+        <input type="checkbox" class="text" value="1" name="services">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Access Now</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_extra checkbox_red">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">RCHD Resource Centers</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <br><br>
+
+      <label class="field_checkbox checkbox_extra checkbox_green">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Daily Planet</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_extra checkbox_green">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Crossover</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_extra checkbox_green">
+        <input type="checkbox" class="text" value="1" name="services">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">Access Now</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <label class="field_checkbox checkbox_extra checkbox_green">
+        <input type="checkbox" class="text" value="1" name="services" checked="true">
+        <span class="field_checkbox_content">
+          <span class="field_checkbox_content_title">RCHD Resource Centers</span>
+          <span class="field_checkbox_content_text">Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod</span>
+        </span>
+      </label>
+
+      <br><br>
+      <button class="button button_blue"  type="submit">Check eligibility</button>       
+    </form>
+
+
+  </div>
+{% endblock %}
