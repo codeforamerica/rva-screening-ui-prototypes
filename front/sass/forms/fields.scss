@@ -1,28 +1,35 @@
 // a label for a field or a multifield
 .field_label {
   color: $field-label-color;
+  font-size: 0.9em;
+  font-weight: 800;
 }
 
 // flags are short pieces of text that explain something about the field
 .field_flag {
+  font-size: 0.8em;
   color: $field_flag_color;
+  vertical-align: top;
 }
 
 // help text for a field or multifield
 .field_helptext {
+  display: block;
+  font-size: 0.8em;
+  color: $color-gray;
+  max-width: inherit;
 }
 
 // an individual input element in a field
 .field_input {
   width: 100%;
   &:focus {
-    outline: solid 1px steelblue;
+    // outline: solid 1px $color-black;
   }
 }
 
 // an individual select element in a field
 .field_select {
-  height: 2.5em; // this is a hack right now, but padding doesn't work in browsers yet :(
   &:before {}
 }
 
@@ -30,8 +37,9 @@
 .field_select {
   background: $color-white;
   display: block;
-  padding: $bump-small;
-  border: 1px solid $field_border_color;
+  padding: 0 0.5em;
+  height: 2.5em; // i think this is legit?
+  border: 1px solid $field-border-color;
   font-size:1em;
   font-weight: 100;
   color: $color-black;
@@ -71,12 +79,14 @@
     color: lighten($color-black, 50);
   }
 }
+
+.field_dob { width: 12em; }
+.field_ssn { width: 9em; }
+
 @media (min-width: $break) {
-  .field_first_name { width: $width-third; }
-  .field_middle_name { width: $width-third; }
-  .field_last_name { width: $width-third; }
-  .field_dob {}
-  .field_ssn {}
+  .field_first_name {}
+  .field_middle_name {}
+  .field_last_name {}
 
   .field_phone_number { width: $width-third; }
   .field_phone_number_description { width: $width-twothird; }

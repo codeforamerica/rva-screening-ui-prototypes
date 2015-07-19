@@ -14,8 +14,12 @@
   margin-bottom: .5em;
   .form_field {
     float: left;
+    @include bbox();
     &:not(:first-child) {
       margin-left: -1px;
+    }
+    &.form_field_right {
+      float: right;
     }
   }
 }
@@ -24,10 +28,22 @@
 .form_field {
   display: block;
   margin-top: .2em;
+  padding: 0.3em;
+  // @media (max-width: $break) {
+  //   width: 100%;
+  // }
+  // @media (min-width: $break) {
+  //   float: left;
+  //   
+  // }
 }
 
 // two or more inputs that share a label & help text
-.form_multifield {
+.form_multifield {}
+
+body { counter-reset: section; }
+.form_multiform_wrapper {
+  margin-bottom: 3em;
 }
 
 // a wrapper for a set of many to one forms
@@ -37,10 +53,19 @@
 // a form that may be repeated based on the number of items
 // also called many-to-one form
 .form_multiform {
+  @include clearfix();
+  position: relative;
   .form_field {
     margin-top: -1px;
   }
-  border-left: 2px solid blue; // placeholder for denoting a row in many-to-ones
-  padding-left: 10px; // placeholder
-  margin-bottom: .5em;
+  padding-bottom: 0.5em; // placeholder
+  border-bottom: 1px solid #e5e5e5;
+  &::before {
+    position: absolute;
+    left: -0.6em;
+    top: 1.75em;
+    color: $color-gray;
+    counter-increment: section;               /* Increment the section counter*/
+    content: "" counter(section) " "; /* Display the counter */
+  }
 }
