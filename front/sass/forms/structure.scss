@@ -41,6 +41,9 @@
 // two or more inputs that share a label & help text
 .form_multifield {}
 
+
+// MULTI FORMS
+// aka many-to-one
 body { counter-reset: section; }
 .form_multiform_wrapper {
   margin-bottom: 3em;
@@ -53,19 +56,40 @@ body { counter-reset: section; }
 // a form that may be repeated based on the number of items
 // also called many-to-one form
 .form_multiform {
+  padding: 0.5em 2em 2em;
+  margin-bottom: 1em;
   @include clearfix();
   position: relative;
   .form_field {
     margin-top: -1px;
   }
   padding-bottom: 0.5em; // placeholder
-  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
   &::before {
     position: absolute;
-    left: -0.6em;
-    top: 1.75em;
+    left: 0em;
+    top: 0.2em;
     color: $color-gray;
     counter-increment: section;               /* Increment the section counter*/
     content: "" counter(section) " "; /* Display the counter */
+  }
+}
+
+.form_multiform_controls {
+  float: right;
+  font-size: 1.3em;
+  .form_multiform_remove { color: $color-fuscia; }
+  .form_multiform_edit { color: $color-green; }
+}
+
+.form_multiform_deactivated {
+  .field_label {
+    padding: 0;
+    display: none;
+  }
+  .field_input {
+    background: transparent;
+    height: auto;
+    border: none;
   }
 }

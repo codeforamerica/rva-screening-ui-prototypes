@@ -188,7 +188,7 @@
 
       <div class="form_multiform_wrapper">
         <div class="form_multiform_collection" id="multieform_phone_number">
-          <div class="form_multiform" id="multieform_phone_number_row">
+          <!-- <div class="form_multiform" id="multieform_phone_number_row">
             <label class="form_field field_phone_number block_4">
               <span class="field_label">Phone Number</span>
               <input class="field_input" type="tel" name="phone_number">
@@ -197,7 +197,43 @@
               <span class="field_label">Description</span>
               <input class="field_input" type="text" name="phone_description">
             </label>
+          </div> -->
+
+          <div class="form_multiform" id="multieform_phone_number_row">
+            <div class="form_multiform_controls">
+              <span class="form_multiform_edit"><i class="fa fa-pencil"></i></span>
+              <span class="form_multiform_remove"><i class="fa fa-trash-o"></i></span>
+            </div>
+
+            
           </div>
+
+          <div class="form_multiform" id="multieform_phone_number_row">
+            <div class="form_multiform_controls">
+              <span class="form_multiform_edit"><i class="fa fa-pencil"></i></span>
+              <span class="form_multiform_remove"><i class="fa fa-trash-o"></i></span>
+            </div>
+
+            <span><strong>651-343-6555</strong> Cellphone</span>
+          </div>
+
+          <div class="form_multiform form_multiform_deactivated" id="multieform_phone_number_row">
+
+            <label class="form_field field_phone_number block_4">
+              <span class="field_label">Phone Number</span>
+              <input class="field_input" type="tel" name="phone_number" value="651-343-6555">
+            </label>
+            <label class="form_field field_phone_number_description block_4">
+              <span class="field_label">Description</span>
+              <input class="field_input" type="text" name="phone_description" value="Cellphone">
+            </label>
+
+            <div class="form_multiform_controls">
+              <span class="form_multiform_edit"><i class="fa fa-pencil"></i></span>
+              <span class="form_multiform_remove"><i class="fa fa-trash-o"></i></span>
+            </div>
+          </div>
+
         </div>
 
         <button type="button"
@@ -205,6 +241,7 @@
           onclick="addNewInputRow($('#multieform_phone_number'), $('#multieform_phone_number_row'))">
           Add a phone number
         </button>
+      
       </div>
 
 <!-- <hr>
