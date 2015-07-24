@@ -1,4 +1,5 @@
 .form {
+  // font-size: 1.5em;
 }
 
 // a wrapper for a full section of the form, such as "household size"
@@ -29,6 +30,7 @@
   display: block;
   margin-top: .2em;
   padding: 0.3em;
+  position: relative;
   // @media (max-width: $break) {
   //   width: 100%;
   // }

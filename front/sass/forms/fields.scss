@@ -26,6 +26,26 @@
   &:focus {
     // outline: solid 1px $color-black;
   }
+
+  &.field_input_verified,
+  &.field_input_invalid {
+    + .field_verification {
+      position: absolute;
+      right: 11px;
+      bottom: 12px;
+    }
+  }
+  &.field_input_verified {
+    + .field_verification {
+      color: $color-green;
+    }
+  }
+  &.field_input_invalid {
+    border: 1px solid $color-red;
+    + .field_verification {
+      color: $color-red;
+    }
+  }
 }
 
 // an individual select element in a field
@@ -38,9 +58,9 @@
   background: $color-white;
   display: block;
   padding: 0 0.5em;
-  height: 2.5em; // i think this is legit?
+  height: 2em; // i think this is legit?
   border: 1px solid $field-border-color;
-  font-size:1em;
+  font-size: 0.9em;
   font-weight: 100;
   color: $color-black;
   @include bbox;
