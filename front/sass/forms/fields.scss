@@ -33,17 +33,26 @@
       position: absolute;
       right: 11px;
       bottom: 12px;
+      &:before {
+        @extend %icon;
+      }
     }
   }
   &.field_input_verified {
     + .field_verification {
-      color: $color-green;
+      &:before {
+        content:"\f00c";
+        color: $color-green;
+      }
     }
   }
   &.field_input_invalid {
     border: 1px solid $color-red;
     + .field_verification {
-      color: $color-red;
+      &:before {
+        content:"\f00d";
+        color: $color-red;
+      }
     }
   }
 }
