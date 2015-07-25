@@ -59,12 +59,13 @@
 
 // an individual select element in a field
 .field_select {
+  @extend %dropdown_reset;
   &:before {}
 }
 
 .field_input,
 .field_select {
-  background: $color-white;
+  background-color: $color-white;
   display: block;
   padding: 0 0.5em;
   height: 2em; // i think this is legit?

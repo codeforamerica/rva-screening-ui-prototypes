@@ -38,18 +38,12 @@
     }
   }
   .tabs_dropdown { // mobile select menu
-    position: relative;
-    -webkit-appearance: none;
-    -webkit-border-radius: 0px;
+    @extend %dropdown_reset;
     padding: $tab-padding;
     font-size: $tab-font-size;
     text-transform: uppercase;
     width: 100%;
     background-color: $tab-background-color;
-    background-image: url(/img/dropdown_arrows.png);
-    background-position: 99% 50%;
-    background-size: 20px;
-    background-repeat: no-repeat;
     border: $tab-border;
     @media (min-width: $break) {
       display: none;

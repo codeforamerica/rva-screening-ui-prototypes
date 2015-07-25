@@ -93,6 +93,15 @@ $field_label_color: $color-black;
 // flags
 $field_flag_color: $color-darkgray;
 
+%dropdown_reset {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  background-image: url(/img/dropdown_arrows.png);
+  background-position: 99% 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+
 
 /* * * * * * * * 
 **
