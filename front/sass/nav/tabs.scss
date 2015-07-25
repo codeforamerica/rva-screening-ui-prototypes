@@ -1,0 +1,8 @@
+.tabs {
+  .tab {
+    &.tab_active {}
+    &:hover {}
+  }
+  .tabs_dropdown {} // mobile select menu
+}
+
