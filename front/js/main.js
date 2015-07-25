@@ -124,11 +124,6 @@ function addNewInputRow($table, $input_row) {
     $(this).attr('id', '');
     var input = $(this).find(':input');
     input.val('');
-    input.each(function() { // adds placeholder of the field label (for mobile label)
-      console.log(this);
-      $(this).attr('placeholder', $(this).prev('.field_label').text());
-    });
-    $(this).find('span').remove();
   });
   $table.append($new_row);
   return;

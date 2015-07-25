@@ -3,116 +3,114 @@
 <div class="container">
     
 
-  <div class="patient-profile col-md-3 clearfix">
+  <div class="block_3">
 
-  <img class="patient-image img-responsive" src="http://wanna.work/images/default-avatar.jpg">
-  
-  <h2>John Adams</h2>
-  <p>DOB: 1989-01-05</p>
+    <img class="patient-image img-responsive" src="http://wanna.work/images/default-avatar.jpg">
+    
+    <h2>John Adams</h2>
+    <p>DOB: 1989-01-05</p>
 
+    
+    <div class="fpl form-group">
+      <label class="fpl-label">
+        Estimated FPL:</label>
+      <span class="fpl-figure">
+        24.46</span><span class="fpl-percent-symbol">%
+      </span>
+    </div>
   
-  <div class="fpl form-group">
-    <label class="fpl-label">
-      Estimated FPL:</label>
-    <span class="fpl-figure">
-      24.46</span><span class="fpl-percent-symbol">%
-    </span>
+
   </div>
-  
 
-</div>
-
-  <div class="patient-content col-md-9">
+  <div class="block_9">
 
     
 
-        <div class="patient-options">
-  <a class="btn btn-primary" href="/new_prescreening/12">
-  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-  Prescreen this patient
-  </a>
-
-  <a class="btn btn-danger delete-patient right" href="/delete/12">
-  <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-  Delete patient
-  </a>
-</div>
-
-<br>
-<ul class="patient-nav nav nav-tabs">
-
-  <li role="presentation" class="active">
-    <a href="/patient_details/12">
-    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>  
-    Details
+  <div class="patient-options">
+    <a class="btn btn-primary" href="/new_prescreening/12">
+    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+    Prescreen this patient
     </a>
-  </li>
 
-  <li role="presentation" >
-    <a href="/patient_print/12">
-      <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
-      Print this patient
+    <a class="btn btn-danger delete-patient right" href="/delete/12">
+    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+    Delete patient
     </a>
-  </li>
+  </div>
 
-  <li role="presentation" >
-    <a href="/patient_history/12">
-    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  
-    View Edit History
-    </a>
-  </li>
+  <br>
+    <!-- <ul class="patient-nav nav nav-tabs">
 
-  <li role="presentation" >
-    <a href="/patient_share/12">
-    <span class="glyphicon glyphicon-share-alt"></span>
-    Share Patient
-    </a>
-  </li>
-</ul>
+      <li role="presentation" class="active">
+        <a href="/patient_details/12">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>  
+        Details
+        </a>
+      </li>
 
-    
+      <li role="presentation" >
+        <a href="/patient_print/12">
+          <span class="glyphicon glyphicon-print" aria-hidden="true"></span>
+          Print this patient
+        </a>
+      </li>
+
+      <li role="presentation" >
+        <a href="/patient_history/12">
+        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>  
+        View Edit History
+        </a>
+      </li>
+
+      <li role="presentation" >
+        <a href="/patient_share/12">
+        <span class="glyphicon glyphicon-share-alt"></span>
+        Share Patient
+        </a>
+      </li>
+    </ul> -->
 
     <form enctype="multipart/form-data" action="" method="post" id="patient_details_form" class="form print">
 
       <!-- id info -->
       <div class="form_section">
-          <div class="form_row">
+        <div class="form_row">
+          <label class="form_field field_first_name block_4">
+            <span class="field_label">
+              First Name
+            </span>
+            <input type="text" 
+              class="field_input" 
+              name="first_name" 
+              id="full_name" 
+              
+                value="John Adams"
+              >
+          <!--storing full legal name in first_name so that it doesn't break backend-->
+          </label>
 
-  <label class="form_field field_first_name">
-    <span class="field_label">
-      First Name
-    </span>
-    <input type="text" 
-      class="field_input" 
-      name="first_name" 
-      id="full_name" 
-      
-        value="John Adams"
-      >
-  <!--storing full legal name in first_name so that it doesn't break backend-->
-  </label>
+          <label class="form_field field_middle_name block_4">
+            <span class="field_label">
+              Middle Name
+            </span>
+            <input type="text" 
+              class="field_input field_input_invalid" 
+              name="middle_name" 
+              >
+            <span class="field_verification"></span>
+          </label>
 
-  <label class="form_field field_middle_name">
-    <span class="field_label">
-      Middle Name
-    </span>
-    <input type="text" 
-      class="field_input" 
-      name="middle_name" 
-      >
-  </label>
-
-  <label class="form_field field_last_name">
-    <span class="field_label">
-      Last Name
-    </span>
-    <input type="text" 
-      class="field_input" 
-      name="last_name" 
-      >
-  </label>
-
-</div>
+          <label class="form_field field_last_name block_4">
+            <span class="field_label">
+              Last Name
+            </span>
+            <input type="text" 
+              class="field_input field_input_verified" 
+              name="last_name" 
+              >
+            <span class="field_verification"></span>
+          </label>
+        </div>
 
   <div class="form_row">
 
@@ -129,6 +127,9 @@
            
             value="1989-01-05"
           >
+          <span class="field_helptext">
+            <!-- Random help text on an input that isn't terribly long. -->
+          </span>
       </label>
 
       <label class="form_field field_ssn">
@@ -151,6 +152,33 @@
 
   </div>
 
+  <div class="form_row">
+    <label class="form_field field_gender block_5">
+      <span class="field_label">
+        Gender
+      </span>
+      <select class="field_select" name="gender">
+        <option class='default-choice' value="" selected>No Answer</option>
+        <option value="F">Female</option>
+        <option value="M">Male</option>
+      </select>
+      <span class="field_helptext">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </span>
+    </label>
+
+    <label class="form_field field_gender block_4 form_field_right">
+      <span class="field_label">
+        An option floating right
+      </span>
+      <select class="field_select" name="gender">
+        <option class='default-choice' value="" selected>See!!</option>
+        <option value="F">Female</option>
+        <option value="M">Male</option>
+      </select>
+    </label>
+  </div>
+
 
 
 
@@ -158,27 +186,65 @@
 
       <!--contact info-->
       <div class="form_section">
-      <h2>Phone, Email, Address</h2>
+      <h2>Phone Number(s)</h2>
 
-      <div class="form_multiform_collection" id="multieform_phone_number">
-        <div class="form_multiform" id="multieform_phone_number_row">
-          <label class="form_field field_phone_number">
-            <span class="field_label">Phone Number</span>
-            <input class="field_input" type="tel" name="phone_number">
-          </label>
-          <label class="form_field field_phone_number_description">
-            <span class="field_label">Description</span>
-            <input class="field_input" type="text" name="phone_description">
-          </label>
+      <div class="form_multiform_wrapper">
+        <div class="form_multiform_collection" id="multieform_phone_number">
+          <!-- <div class="form_multiform" id="multieform_phone_number_row">
+            <label class="form_field field_phone_number block_4">
+              <span class="field_label">Phone Number</span>
+              <input class="field_input" type="tel" name="phone_number">
+            </label>
+            <label class="form_field field_phone_number_description block_8">
+              <span class="field_label">Description</span>
+              <input class="field_input" type="text" name="phone_description">
+            </label>
+          </div> -->
+
+          <div class="form_multiform" id="multieform_phone_number_row">
+            <div class="form_multiform_controls">
+              <span class="form_multiform_edit"><i class="fa fa-pencil"></i></span>
+              <span class="form_multiform_remove"><i class="fa fa-trash-o"></i></span>
+            </div>
+
+            
+          </div>
+
+          <div class="form_multiform" id="multieform_phone_number_row">
+            <div class="form_multiform_controls">
+              <span class="form_multiform_edit"><i class="fa fa-pencil"></i></span>
+              <span class="form_multiform_remove"><i class="fa fa-trash-o"></i></span>
+            </div>
+
+            <span><strong>651-343-6555</strong> Cellphone</span>
+          </div>
+
+          <div class="form_multiform form_multiform_deactivated" id="multieform_phone_number_row">
+
+            <label class="form_field field_phone_number block_4">
+              <span class="field_label">Phone Number</span>
+              <input class="field_input" type="tel" name="phone_number" value="651-343-6555">
+            </label>
+            <label class="form_field field_phone_number_description block_4">
+              <span class="field_label">Description</span>
+              <input class="field_input" type="text" name="phone_description" value="Cellphone">
+            </label>
+
+            <div class="form_multiform_controls">
+              <span class="form_multiform_edit"><i class="fa fa-pencil"></i></span>
+              <span class="form_multiform_remove"><i class="fa fa-trash-o"></i></span>
+            </div>
+          </div>
+
         </div>
+
+        <button type="button"
+          class="button button_multiform_addrow"
+          onclick="addNewInputRow($('#multieform_phone_number'), $('#multieform_phone_number_row'))">
+          Add a phone number
+        </button>
+      
       </div>
-
-      <button type="button"
-        class="button button_multiform_addrow"
-        onclick="addNewInputRow($('#multieform_phone_number'), $('#multieform_phone_number_row'))">
-        Add a phone number
-      </button>
-
 
 <!-- <hr>
 
