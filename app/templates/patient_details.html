@@ -18,25 +18,25 @@
         24.46</span><span class="fpl-percent-symbol">%
       </span>
     </div>
+
+    <div class="patient-options">
+      <a class="button button_green" href="/new_prescreening/12">
+        <i class="fa fa-th"></i>
+        Prescreen this patient
+      </a>
+
+      <a class="button button_red" href="/delete/12">
+        <i class="fa fa-trash-o"></i>
+        Delete patient
+      </a>
+    </div>
   
 
   </div>
 
   <div class="block_9">
 
-    
-
-  <div class="patient-options">
-    <a class="btn btn-primary" href="/new_prescreening/12">
-    <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
-    Prescreen this patient
-    </a>
-
-    <a class="btn btn-danger delete-patient right" href="/delete/12">
-    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-    Delete patient
-    </a>
-  </div>
+  {% include "includes/tabs.html" %}
 
   <br>
     <!-- <ul class="patient-nav nav nav-tabs">

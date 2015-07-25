@@ -4,6 +4,7 @@
   @include clearfix();
   margin:auto;
   padding: 0 1em;
+  overflow-x: hidden; // for testing
   @media (min-width: $break) {
     width: $break - 2em;
   }

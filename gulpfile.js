@@ -50,6 +50,7 @@ gulp.task('vendorJS', function(){
 gulp.task('watch', function() {
     gulp.watch('./front/**/*.scss', ['sass']);
     gulp.watch('./front/**/*.js', ['js']);
+    gulp.watch('./front/img/**.*', ['img']);
 });
 
 gulp.task('build', ['img', 'glyphicons', 'sass', 'vendorJS', 'js']);
