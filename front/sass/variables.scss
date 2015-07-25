@@ -93,6 +93,15 @@ $field_label_color: $color-black;
 // flags
 $field_flag_color: $color-darkgray;
 
+%dropdown_reset {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  background-image: url(/img/dropdown_arrows.png);
+  background-position: 99% 50%;
+  background-size: 20px;
+  background-repeat: no-repeat;
+}
+
 
 /* * * * * * * * 
 **
@@ -150,4 +159,29 @@ $checkbox-content-width: 250px;
 $checkbox-title-font-size: 1em;
 $checkbox-text-font-size: $checkbox-title-font-size - 0.3em;
 $checkbox-padding: 1em;
+
+
+/* * * * * * * * 
+**
+** TABS
+**
+** * * * * * * */
+
+$tab-container-margin: 2em 0 0.5em;
+$tab-font-size: 0.8em;
+$tab-padding: 0.7em 1.2em;
+$tab-border: 1px solid $color-gray;
+$tab-active-border: 1px solid $color-white;
+$tab-background-color: $color-white;
+$tab-margin: 5px;
+$tab-border-radius: 5px;
+$tab-hover-color: $color-lightgray;
+
+%tab_meta_border {
+  content: " ";
+  position: absolute;
+  border-bottom: $tab-border;
+  bottom: -1px;
+  width: $tab-margin + 1px;
+}
 
