@@ -10,6 +10,12 @@ $list-padding-large: 1em;
 
 .list {
   @include list_reset();
+  &.list_filter {
+    display: none;
+    &.list_filter_active {
+      display: block;
+    }
+  }
 }
 
 .list_table {
@@ -32,6 +38,7 @@ $list-padding-large: 1em;
     }
   }
 }
+
 .list_row {
   position: relative;
   @include bbox();
