@@ -29,7 +29,7 @@ var jsFiles = [
 ];
 // Concatenate js
 gulp.task('js', function() {
-	return gulp.src(jsFiles)
+	return gulp.src('./front/js/**.js') // just the top level .js files (not /lib)
 		.pipe(concat('main.js'))
 		.pipe(gulp.dest('./app/static/js/'));
 });

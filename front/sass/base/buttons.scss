@@ -16,6 +16,15 @@
   &:hover {
     background: darken($color, 10);
   }
+  &.button_inverse {
+    color: $color;
+    background: $text;
+    border: 1px solid $color;
+    &:hover {
+      background: $color;
+      color: $text;
+    }
+  }
 }
 
 @mixin icon_before($content, $margin: 1em) {
@@ -55,6 +64,9 @@
     
   &.button_red {
     @include button_color($color-red);
+  }
+  &.button_black {
+    @include button_color($color-black);
   }
   &.button_blue {
     @include button_color($color-blue);
