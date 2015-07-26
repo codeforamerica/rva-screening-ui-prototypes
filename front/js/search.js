@@ -3,7 +3,10 @@
 **  If #search exists, load patients as a large JSON for Defiant.js
 **
 */
-$(document).ready(function(){
+window.Search = window.Search || {};
+var Search = function ( options ) {
+  console.info('Search initialized :)')
+  this.options = options;
   $('.field_input_search').on('keyup', function(e){
     // console.log($(this).val());
     var valueName = $('#field_search_patient_name').val();
@@ -37,7 +40,7 @@ $(document).ready(function(){
     var id = $(this).attr('data-list');
     $('#list-'+id).addClass('list_filter_active');
   });
-});
+}
 
 /*
 **  PATIENT DATA USED FOR SEARCH

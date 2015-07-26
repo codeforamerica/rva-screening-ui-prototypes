@@ -46,7 +46,7 @@ $list-padding-large: 1em;
   display: block;
   width: 100%;
   border-bottom: 1px solid #e5e5e5;
-  &:first-child() {
+  &:first-child {
     border-top: 1px solid #e5e5e5;
   }
   a {
@@ -102,7 +102,7 @@ $list-padding-large: 1em;
 }
 
 .list_row_name {
-  font-weight: 700;
+  // font-weight: 700;
   color: $color-fuscia;
 
   @media (min-width: $break) {
