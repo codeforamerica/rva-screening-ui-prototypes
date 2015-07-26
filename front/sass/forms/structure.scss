@@ -23,6 +23,11 @@
       float: right;
     }
   }
+  &.form_row_nopadding {
+    .form_field {
+      padding: 0;
+    }
+  }
 }
 
 // a single input with associated label and help text

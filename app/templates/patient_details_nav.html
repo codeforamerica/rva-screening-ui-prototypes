@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
+
+{% include "includes/nav_patient.html" %}
 <div class="container">
     
 
@@ -17,18 +19,6 @@
       <span class="fpl-figure">
         24.46</span><span class="fpl-percent-symbol">%
       </span>
-    </div>
-
-    <div class="patient-options">
-      <a class="button button_green" href="/new_prescreening/12">
-        <i class="fa fa-th"></i>
-        Prescreen this patient
-      </a>
-
-      <a class="button button_red" href="/delete/12">
-        <i class="fa fa-trash-o"></i>
-        Delete patient
-      </a>
     </div>
   
 

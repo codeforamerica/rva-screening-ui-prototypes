@@ -99,25 +99,3 @@
 
   </div>
 {% endblock %}
-
-
-{% block script %}
-<script>
-window.onload = init();
-function init() {
-  window.App = new AppController({
-    foo: 'bar'
-  });
-
-  window.F = new Filter({
-    id: "filter",
-    filterClass: 'list_row',
-    filters: [
-      { name: "New", id: "list_row_new" },
-      { name: "Recently Updated", id: "list_row_updated" },
-      { name: "Warning", id: "list_row_warning" }
-    ]
-  });
-}
-</script>
-{% endblock %}

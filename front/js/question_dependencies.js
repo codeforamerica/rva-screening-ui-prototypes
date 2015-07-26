@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 var DEPENDENCIES = [
   { target: "marital_status", child: "spouse_employment_status", 
     type: "equals", comparator: "MAR" },

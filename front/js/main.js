@@ -10,9 +10,8 @@ var inputClearingFunctions = [
 ];
 
 var AppController = function ( options ) {
-  console.info('APP INITIALIZED :)');
+  console.info('App initialized :)');
   this.options = options || {};
-
   addEventListeners();
   function addEventListeners() {
     /*
@@ -60,44 +59,6 @@ var AppController = function ( options ) {
   // If we're on the print page, hide everything that shouldn't print
   if (window.location.pathname.indexOf('/patient_print') > -1) {
     convertForPrint();
-  }
-
-  /*
-  **  SEARCH FIELD CHECK
-  **  If #patient-search exists, initialize the search
-  **
-  */
-  if ($('#service-map').length) {
-
-    // temporary fake locations
-    var locations = [];
-    $('.location').each(function(){
-      var newLocation = {};
-      newLocation.coordinates = [parseFloat($(this).attr('data-latitude')), parseFloat($(this).attr('data-longitude'))];
-      newLocation.address = $(this).attr('data-address');
-      locations.push(newLocation);
-    });
-
-    L.mapbox.accessToken = 'pk.eyJ1Ijoic3ZtYXR0aGV3cyIsImEiOiJVMUlUR0xrIn0.NweS_AttjswtN5wRuWCSNA';
-    var map = L.mapbox.map('service-map', 'svmatthews.lidab7g5');
-
-    var markers = L.mapbox.featureLayer();
-    locations.forEach(addMarker);
-    function addMarker(location) {
-      var content = location.address;
-
-      var marker = L.marker(location.coordinates, {
-        icon: L.mapbox.marker.icon({
-          'marker-size': 'large',
-          'marker-symbol': 'star',
-          'marker-color': '#333'
-        })
-      }).bindPopup(content).addTo(markers);
-    }
-    markers.addTo(map);
-    map.fitBounds(markers.getBounds());
-
-
   }
 
 };
@@ -172,110 +133,3 @@ function sharePatientInfo( btn ) {
 }
 
 
-var Filter = function(options) {
-  this.options = options || {};
-  this.filter_element = document.getElementById(options.id);
-  this.filters = options.filters;
-  this.buttons = [];
-  this.filterClass = '.' + options.filterClass;
-
-  this._build(this.filters);
-}
-
-Filter.prototype._build = function(filters) {
-  // build the 'all' filter first
-  this.filter_element.innerHTML = '<span class="sidebar_title"><i class="fa fa-sliders"></i> Filter Patients</span>';
-  this.filter_element.appendChild(this._createFilter('All', 'all', true));
-  var _this = this;
-  for (var i = 0; i < filters.length; ++i) {
-    var filter = _this._createFilter(filters[i].name, filters[i].id);
-    _this.buttons.push(filter);
-    _this.filter_element.appendChild(filter);
-  }
-}
-
-Filter.prototype._createFilter = function(name, id, activeState) {
-  var _this = this;
-  var btn = document.createElement('button');
-  btn.className = 'button filter_button';
-  if (activeState) btn.className += ' filter_button_active';
-  btn.setAttribute('data-filter', id);
-  btn.innerHTML = name;
-  btn.onclick = function() {
-    $('.filter_button').removeClass('filter_button_active');
-    $(this).addClass('filter_button_active');
-    _this.filterElements(id);
-  }
-  return btn;
-}
-
-Filter.prototype.filterElements = function(id) {
-  console.log(id);
-  if (id != 'all') {
-    $(this.filterClass).addClass('filter_hide');
-    $('.'+id).removeClass('filter_hide');
-  } else {
-    $(this.filterClass).removeClass('filter_hide');
-  }
-}
-
-window.menu = {
-    yDown: null,
-    xDown: null,
-    swipeMenuState: false,
-    elem: document.getElementById('nav'),
-    button: document.getElementById('nav_button'),
-    open: function() {
-      menu.elem.className += ' open';
-      document.body.className = 'menu_open';
-      menu.button.className += ' open';
-      menu.swipeMenuState = !menu.swipeMenuState;
-    },
-    close: function() {
-      menu.elem.className = 'nav';
-      document.body.className = '';
-      menu.button.className = 'button button_nav';
-      menu.swipeMenuState = !menu.swipeMenuState;
-    },
-    toggle: function() {
-      if (menu.swipeMenuState) {
-        menu.close();
-      } else {
-        menu.open();
-      }
-    },
-    handleTouchStart: function(event) {
-      menu.xDown = event.touches[0].clientX;                                      
-      menu.yDown = event.touches[0].clientY;
-    },
-    handleTouchMove: function(event) {
-      if ( ! menu.xDown || ! menu.yDown ) {
-        return;
-      }
-      var xUp = event.touches[0].clientX,                                    
-          yUp = event.touches[0].clientY,
-          xDiff = menu.xDown - xUp,
-          yDiff = menu.yDown - yUp;
-      if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {
-        document.body.className = 'menu_open'; // prevent vertical scroll during open
-        if ( xDiff > 0 ) {
-          if (menu.swipeMenuState) menu.close(); 
-        } else {
-          if (!menu.swipeMenuState) menu.open();
-        }                       
-      } else {
-        if ( yDiff > 0 ) {
-          /* up swipe, do nothing */ 
-        } else { 
-          /* down swipe, do nothing */
-        }                                                                 
-      }
-      /* reset values */
-      menu.xDown = null;
-      menu.yDown = null; 
-    }
-  }
-  // screen swiping
-  document.addEventListener('touchstart', menu.handleTouchStart, false);
-  menu.button.addEventListener('click', menu.toggle, false);        
-  document.addEventListener('touchmove', menu.handleTouchMove, false);
